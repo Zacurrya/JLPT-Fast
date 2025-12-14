@@ -24,11 +24,10 @@ Test your knowledge with varying question types including Multiple Choice, Match
 
 ### 3. Typing & Translation
 Practice your input skills with our smart Romaji-to-Kana converter. Type translations for sentences and vocabulary.
-![Typing Practice](public/screenshots/quiz-typing.png)
 
 ### 4. Immersion & Listening
 Curated listening practice videos and conversation scenarios to train your ear to natural Japanese speeds.
-*(See banner image above)*
+![Typing Practice](public/screenshots/quiz-typing.png)
 
 ## 🛠 Tech Stack
 
