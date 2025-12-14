@@ -943,6 +943,885 @@ export const n5Chapters: Chapter[] = [
                 ]
             }
         ]
+    },
+    // ========================================
+    // CHAPTER 6: SHOPPING & MONEY
+    // ========================================
+    {
+        id: "chapter-6-shopping",
+        number: 6,
+        title: "Shopping & Money",
+        description: "Transactions and prices",
+        theme: {
+            primaryGradient: "from-yellow-400 to-amber-500",
+            secondaryGradient: "from-yellow-600 to-orange-600",
+            ringColor: "ring-yellow-200",
+            textColors: {
+                title: "text-yellow-50",
+                description: "text-yellow-100/90"
+            }
+        },
+        lessons: [
+            {
+                id: "money-basics",
+                title: "Money & Prices",
+                description: "Learn about Japanese currency",
+                iconType: 'shopping',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Japanese Yen",
+                        text: "The Japanese currency is the Yen (円). Unlike dollars, there are no decimals - prices are whole numbers."
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "円", romaji: "en", desc: "Yen (currency)" },
+                            { kana: "いくら", romaji: "ikura", desc: "How much?" }
+                        ]
+                    },
+                    {
+                        type: 'info',
+                        heading: "Asking Prices",
+                        text: "To ask 'How much is this?', use the question word <b>いくら</b>.",
+                        structure: "これ は いくら ですか",
+                        example: {
+                            jp: "これ は いくら ですか",
+                            romaji: "kore wa ikura desu ka",
+                            en: "How much is this?"
+                        }
+                    },
+                    {
+                        type: 'typing',
+                        targetKana: "いくら",
+                        meaning: "How much?",
+                        romaji: "ikura"
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you ask 'How much is this?'",
+                        options: ["これ は いくら ですか", "これ は なん ですか", "これ は どこ ですか", "これ を ください"],
+                        correctAnswer: "これ は いくら ですか",
+                        scorable: true,
+                        showRomaji: true
+                    }
+                ]
+            },
+            {
+                id: "counter-basics",
+                title: "Counting Things",
+                description: "Japanese counter words",
+                iconType: 'book',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Counter Words",
+                        text: "Japanese uses different counters for different types of objects. The general counter <b>つ</b> works for most things."
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "ひとつ", romaji: "hitotsu", desc: "One (thing)" },
+                            { kana: "ふたつ", romaji: "futatsu", desc: "Two (things)" },
+                            { kana: "みっつ", romaji: "mittsu", desc: "Three (things)" }
+                        ]
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say 'two things'?",
+                        options: ["ふたつ", "ひとつ", "みっつ", "に"],
+                        correctAnswer: "ふたつ",
+                        scorable: true,
+                        showRomaji: true
+                    }
+                ]
+            }
+        ]
+    },
+    // ========================================
+    // CHAPTER 7: ADJECTIVES
+    // ========================================
+    {
+        id: "chapter-7-adjectives",
+        number: 7,
+        title: "Adjectives & Descriptions",
+        description: "Describing things around you",
+        theme: {
+            primaryGradient: "from-pink-400 to-rose-500",
+            secondaryGradient: "from-pink-600 to-red-600",
+            ringColor: "ring-pink-200",
+            textColors: {
+                title: "text-pink-50",
+                description: "text-pink-100/90"
+            }
+        },
+        lessons: [
+            {
+                id: "i-adjectives",
+                title: "い-Adjectives",
+                description: "Adjectives ending in い",
+                iconType: 'book',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "い-Adjectives",
+                        text: "Japanese adjectives ending in <b>い</b> can directly modify nouns or end sentences."
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "おおきい", romaji: "ookii", desc: "Big" },
+                            { kana: "ちいさい", romaji: "chiisai", desc: "Small" },
+                            { kana: "たかい", romaji: "takai", desc: "Expensive / Tall" },
+                            { kana: "やすい", romaji: "yasui", desc: "Cheap" }
+                        ]
+                    },
+                    {
+                        type: 'info',
+                        heading: "Using い-Adjectives",
+                        text: "Place the adjective directly before the noun.",
+                        structure: "Adjective + Noun",
+                        example: {
+                            jp: "おおきい いえ",
+                            romaji: "ookii ie",
+                            en: "A big house"
+                        }
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say 'small cat'?",
+                        options: ["ちいさい ねこ", "ねこ ちいさい", "ちいさ ねこ", "ねこ の ちいさい"],
+                        correctAnswer: "ちいさい ねこ",
+                        scorable: true,
+                        showRomaji: true
+                    }
+                ]
+            },
+            {
+                id: "na-adjectives",
+                title: "な-Adjectives",
+                description: "Adjectives requiring な",
+                iconType: 'book',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "な-Adjectives",
+                        text: "Some adjectives need <b>な</b> when modifying nouns. They don't end in い (usually)."
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "きれい", romaji: "kirei", desc: "Beautiful / Clean" },
+                            { kana: "しずか", romaji: "shizuka", desc: "Quiet" },
+                            { kana: "げんき", romaji: "genki", desc: "Healthy / Energetic" },
+                            { kana: "すき", romaji: "suki", desc: "Like" }
+                        ]
+                    },
+                    {
+                        type: 'info',
+                        heading: "Using な-Adjectives",
+                        text: "Add <b>な</b> between the adjective and noun.",
+                        structure: "な-Adjective + な + Noun",
+                        example: {
+                            jp: "しずか な へや",
+                            romaji: "shizuka na heya",
+                            en: "A quiet room"
+                        }
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say 'a beautiful flower'?",
+                        options: ["きれい な はな", "きれい はな", "はな きれい", "きれいい はな"],
+                        correctAnswer: "きれい な はな",
+                        scorable: true,
+                        showRomaji: true
+                    }
+                ]
+            },
+            {
+                id: "colors",
+                title: "Colors",
+                description: "Basic color vocabulary",
+                iconType: 'book',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Colors in Japanese",
+                        text: "Colors can be い-adjectives or nouns. Let's learn the basics!"
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "あか", romaji: "aka", desc: "Red" },
+                            { kana: "あお", romaji: "ao", desc: "Blue" },
+                            { kana: "しろ", romaji: "shiro", desc: "White" },
+                            { kana: "くろ", romaji: "kuro", desc: "Black" }
+                        ]
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "あか", romaji: "Red" },
+                            { kana: "あお", romaji: "Blue" },
+                            { kana: "しろ", romaji: "White" },
+                            { kana: "くろ", romaji: "Black" }
+                        ],
+                        scorable: true
+                    }
+                ]
+            }
+        ]
+    },
+    // ========================================
+    // CHAPTER 8: VERBS BASICS
+    // ========================================
+    {
+        id: "chapter-8-verbs",
+        number: 8,
+        title: "Verbs & Actions",
+        description: "Doing things in Japanese",
+        theme: {
+            primaryGradient: "from-cyan-400 to-teal-500",
+            secondaryGradient: "from-cyan-600 to-teal-600",
+            ringColor: "ring-cyan-200",
+            textColors: {
+                title: "text-cyan-50",
+                description: "text-cyan-100/90"
+            }
+        },
+        lessons: [
+            {
+                id: "masu-form",
+                title: "Polite Verbs (ます)",
+                description: "The polite verb form",
+                iconType: 'book',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "ます Form",
+                        text: "The <b>ます</b> form is the polite way to use verbs. It's what you'll use in most situations."
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "たべます", romaji: "tabemasu", desc: "Eat (polite)" },
+                            { kana: "のみます", romaji: "nomimasu", desc: "Drink (polite)" },
+                            { kana: "いきます", romaji: "ikimasu", desc: "Go (polite)" },
+                            { kana: "きます", romaji: "kimasu", desc: "Come (polite)" }
+                        ]
+                    },
+                    {
+                        type: 'info',
+                        heading: "Negative Form",
+                        text: "To make a verb negative, change <b>ます</b> to <b>ません</b>.",
+                        structure: "Verb stem + ません",
+                        example: {
+                            jp: "たべません",
+                            romaji: "tabemasen",
+                            en: "Don't eat / Won't eat"
+                        }
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say 'I drink'?",
+                        options: ["のみます", "たべます", "いきます", "きます"],
+                        correctAnswer: "のみます",
+                        scorable: true,
+                        showRomaji: true
+                    }
+                ]
+            },
+            {
+                id: "common-verbs",
+                title: "Essential Verbs",
+                description: "Verbs you'll use every day",
+                iconType: 'book',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Daily Action Verbs",
+                        text: "These verbs cover most daily activities."
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "みます", romaji: "mimasu", desc: "See / Watch" },
+                            { kana: "ききます", romaji: "kikimasu", desc: "Listen / Hear" },
+                            { kana: "よみます", romaji: "yomimasu", desc: "Read" },
+                            { kana: "かきます", romaji: "kakimasu", desc: "Write" }
+                        ]
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "みます", romaji: "See" },
+                            { kana: "ききます", romaji: "Listen" },
+                            { kana: "よみます", romaji: "Read" },
+                            { kana: "かきます", romaji: "Write" }
+                        ],
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "I read a book",
+                        correctSentence: ["ほん", "を", "よみます"],
+                        scorable: true
+                    }
+                ]
+            },
+            {
+                id: "iru-aru",
+                title: "Existence: いる & ある",
+                description: "Saying things exist",
+                iconType: 'book',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "いる vs ある",
+                        text: "Japanese has two verbs for 'to exist':\n\n• <b>いる</b> (imasu) - for living things (people, animals)\n• <b>ある</b> (arimasu) - for non-living things"
+                    },
+                    {
+                        type: 'info',
+                        heading: "Using いる",
+                        text: "Use for people and animals.",
+                        structure: "[Living thing] が います",
+                        example: {
+                            jp: "ねこ が います",
+                            romaji: "neko ga imasu",
+                            en: "There is a cat"
+                        }
+                    },
+                    {
+                        type: 'info',
+                        heading: "Using ある",
+                        text: "Use for objects and non-living things.",
+                        structure: "[Thing] が あります",
+                        example: {
+                            jp: "ほん が あります",
+                            romaji: "hon ga arimasu",
+                            en: "There is a book"
+                        }
+                    },
+                    {
+                        type: 'mcq',
+                        question: "Which verb for 'There is a dog'?",
+                        options: ["います", "あります", "です", "ます"],
+                        correctAnswer: "います",
+                        scorable: true
+                    }
+                ]
+            }
+        ]
+    },
+    // ========================================
+    // CHAPTER 9: TIME & DATES
+    // ========================================
+    {
+        id: "chapter-9-time",
+        number: 9,
+        title: "Time & Schedules",
+        description: "Talking about when things happen",
+        theme: {
+            primaryGradient: "from-indigo-400 to-violet-500",
+            secondaryGradient: "from-indigo-600 to-purple-600",
+            ringColor: "ring-indigo-200",
+            textColors: {
+                title: "text-indigo-50",
+                description: "text-indigo-100/90"
+            }
+        },
+        lessons: [
+            {
+                id: "days-of-week",
+                title: "Days of the Week",
+                description: "Monday through Sunday",
+                iconType: 'time',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Days of the Week",
+                        text: "Each day is named after an element or celestial body."
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "にちようび", romaji: "nichiyoubi", desc: "Sunday" },
+                            { kana: "げつようび", romaji: "getsuyoubi", desc: "Monday" },
+                            { kana: "かようび", romaji: "kayoubi", desc: "Tuesday" },
+                            { kana: "すいようび", romaji: "suiyoubi", desc: "Wednesday" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "もくようび", romaji: "mokuyoubi", desc: "Thursday" },
+                            { kana: "きんようび", romaji: "kinyoubi", desc: "Friday" },
+                            { kana: "どようび", romaji: "doyoubi", desc: "Saturday" }
+                        ]
+                    },
+                    {
+                        type: 'mcq',
+                        question: "What is 'Friday' in Japanese?",
+                        options: ["きんようび", "げつようび", "どようび", "にちようび"],
+                        correctAnswer: "きんようび",
+                        scorable: true,
+                        showRomaji: true
+                    }
+                ]
+            },
+            {
+                id: "time-expressions",
+                title: "Time of Day",
+                description: "Morning, afternoon, evening",
+                iconType: 'time',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Parts of the Day",
+                        text: "Learn to talk about different times of day."
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "あさ", romaji: "asa", desc: "Morning" },
+                            { kana: "ひる", romaji: "hiru", desc: "Noon / Daytime" },
+                            { kana: "よる", romaji: "yoru", desc: "Night" },
+                            { kana: "ばん", romaji: "ban", desc: "Evening" }
+                        ]
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "あさ", romaji: "Morning" },
+                            { kana: "ひる", romaji: "Noon" },
+                            { kana: "よる", romaji: "Night" },
+                            { kana: "ばん", romaji: "Evening" }
+                        ],
+                        scorable: true
+                    }
+                ]
+            }
+        ]
+    },
+    // ========================================
+    // CHAPTER 10: CONNECTING IDEAS
+    // ========================================
+    {
+        id: "chapter-10-connections",
+        number: 10,
+        title: "Connecting Ideas",
+        description: "Making complex sentences",
+        theme: {
+            primaryGradient: "from-lime-400 to-green-500",
+            secondaryGradient: "from-lime-600 to-green-600",
+            ringColor: "ring-lime-200",
+            textColors: {
+                title: "text-lime-50",
+                description: "text-lime-100/90"
+            }
+        },
+        lessons: [
+            {
+                id: "kara-node",
+                title: "Because: から & ので",
+                description: "Giving reasons",
+                iconType: 'book',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Giving Reasons",
+                        text: "<b>から</b> (kara) means 'because'. Place it after the reason.",
+                        structure: "Reason + から + Result",
+                        example: {
+                            jp: "あつい から まど を あけます",
+                            romaji: "atsui kara mado wo akemasu",
+                            en: "Because it's hot, I open the window"
+                        }
+                    },
+                    {
+                        type: 'mcq',
+                        question: "What does 'から' mean?",
+                        options: ["Because", "But", "And", "Or"],
+                        correctAnswer: "Because",
+                        scorable: true
+                    }
+                ]
+            },
+            {
+                id: "ga-kedo",
+                title: "But: が & けど",
+                description: "Expressing contrast",
+                iconType: 'book',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Expressing Contrast",
+                        text: "<b>が</b> and <b>けど</b> both mean 'but'. けど is more casual.",
+                        structure: "Statement 1 + が/けど + Statement 2",
+                        example: {
+                            jp: "たかい ですが おいしい です",
+                            romaji: "takai desu ga oishii desu",
+                            en: "It's expensive but delicious"
+                        }
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say 'but' in Japanese?",
+                        options: ["が / けど", "から", "と", "も"],
+                        correctAnswer: "が / けど",
+                        scorable: true
+                    }
+                ]
+            }
+        ]
+    },
+    // ========================================
+    // CHAPTER 11: DESIRES & SUGGESTIONS
+    // ========================================
+    {
+        id: "chapter-11-desires",
+        number: 11,
+        title: "Wants & Suggestions",
+        description: "Expressing desires and making suggestions",
+        theme: {
+            primaryGradient: "from-fuchsia-400 to-pink-500",
+            secondaryGradient: "from-fuchsia-600 to-pink-600",
+            ringColor: "ring-fuchsia-200",
+            textColors: {
+                title: "text-fuchsia-50",
+                description: "text-fuchsia-100/90"
+            }
+        },
+        lessons: [
+            {
+                id: "tai-form",
+                title: "Want to: たい",
+                description: "Expressing what you want to do",
+                iconType: 'book',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Wanting to Do",
+                        text: "To say 'I want to [verb]', add <b>たい</b> to the verb stem.",
+                        structure: "Verb stem + たい",
+                        example: {
+                            jp: "たべたい",
+                            romaji: "tabetai",
+                            en: "I want to eat"
+                        }
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say 'I want to go'?",
+                        options: ["いきたい", "いきます", "いって", "いく"],
+                        correctAnswer: "いきたい",
+                        scorable: true,
+                        showRomaji: true
+                    },
+                    {
+                        type: 'typing',
+                        targetKana: "たべたい",
+                        meaning: "I want to eat",
+                        romaji: "tabetai"
+                    }
+                ]
+            },
+            {
+                id: "hoshii",
+                title: "Want: ほしい",
+                description: "Wanting things",
+                iconType: 'book',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Wanting Things",
+                        text: "Use <b>ほしい</b> (hoshii) when you want a thing (noun).",
+                        structure: "[Thing] が ほしい",
+                        example: {
+                            jp: "みず が ほしい",
+                            romaji: "mizu ga hoshii",
+                            en: "I want water"
+                        }
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say 'I want coffee'?",
+                        options: ["コーヒー が ほしい", "コーヒー を ほしい", "コーヒー は ほしい", "ほしい コーヒー"],
+                        correctAnswer: "コーヒー が ほしい",
+                        scorable: true,
+                        showRomaji: true
+                    }
+                ]
+            },
+            {
+                id: "mashou",
+                title: "Let's: ましょう",
+                description: "Making suggestions",
+                iconType: 'people',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Let's...",
+                        text: "To suggest doing something together, change <b>ます</b> to <b>ましょう</b>.",
+                        structure: "Verb stem + ましょう",
+                        example: {
+                            jp: "たべましょう",
+                            romaji: "tabemashou",
+                            en: "Let's eat"
+                        }
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say 'Let's go'?",
+                        options: ["いきましょう", "いきたい", "いきます", "いって"],
+                        correctAnswer: "いきましょう",
+                        scorable: true,
+                        showRomaji: true
+                    }
+                ]
+            }
+        ]
+    },
+    // ========================================
+    // CHAPTER 12: REVIEW
+    // ========================================
+    {
+        id: "chapter-12-review",
+        number: 12,
+        title: "Comprehensive Review",
+        description: "Putting it all together",
+        theme: {
+            primaryGradient: "from-slate-500 to-gray-600",
+            secondaryGradient: "from-slate-600 to-gray-700",
+            ringColor: "ring-slate-300",
+            textColors: {
+                title: "text-slate-100",
+                description: "text-slate-200/90"
+            }
+        },
+        lessons: [
+            {
+                id: "particle-review",
+                title: "Particle Review",
+                description: "All essential particles",
+                iconType: 'book',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Particle Summary",
+                        text: "Let's review all the particles we've learned:\n\n• は (wa) - Topic marker\n• が (ga) - Subject marker\n• を (wo) - Object marker\n• に (ni) - Time/Location\n• で (de) - Location of action\n• の (no) - Possessive\n• と (to) - And/With\n• も (mo) - Also"
+                    },
+                    {
+                        type: 'mcq',
+                        question: "Which particle marks the object of a sentence?",
+                        options: ["を", "は", "が", "に"],
+                        correctAnswer: "を",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "I eat sushi at (the) restaurant",
+                        correctSentence: ["レストラン", "で", "すし", "を", "たべます"],
+                        scorable: true
+                    }
+                ]
+            },
+            {
+                id: "grammar-review",
+                title: "Grammar Review",
+                description: "Key grammar patterns",
+                iconType: 'book',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Key Patterns",
+                        text: "Essential grammar patterns for N5:\n\n• Noun + です (am/is/are)\n• Verb + ます/ません (polite form)\n• Adjective + noun (modification)\n• Verb + たい (want to)\n• から/ので (because)"
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you make a verb negative polite?",
+                        options: ["ません", "ないです", "たくない", "じゃない"],
+                        correctAnswer: "ません",
+                        scorable: true
+                    }
+                ]
+            }
+        ]
+    },
+    // ========================================
+    // FINAL COMPREHENSIVE EXAM
+    // ========================================
+    {
+        id: "final-exam",
+        number: 13,
+        title: "JLPT N5 Final Exam",
+        description: "Test your complete knowledge",
+        theme: {
+            primaryGradient: "from-red-600 to-orange-600",
+            secondaryGradient: "from-red-700 to-orange-700",
+            ringColor: "ring-red-300",
+            textColors: {
+                title: "text-red-100",
+                description: "text-red-200/90"
+            }
+        },
+        lessons: [
+            {
+                id: "final-exam-part1",
+                title: "Final Exam - Vocabulary",
+                description: "Test your vocabulary knowledge",
+                iconType: 'trophy',
+                isQuiz: true,
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Final Exam: Part 1",
+                        text: "This is the vocabulary section. You'll be tested on words from all chapters."
+                    },
+                    {
+                        type: 'mcq',
+                        question: "What does 'おはようございます' mean?",
+                        options: ["Good morning", "Good evening", "Goodbye", "Thank you"],
+                        correctAnswer: "Good morning",
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "What does 'えき' mean?",
+                        options: ["Station", "Train", "Ticket", "Bus"],
+                        correctAnswer: "Station",
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "What does 'たべます' mean?",
+                        options: ["Eat", "Drink", "Go", "See"],
+                        correctAnswer: "Eat",
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "What does 'おおきい' mean?",
+                        options: ["Big", "Small", "Expensive", "Cheap"],
+                        correctAnswer: "Big",
+                        scorable: true
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "みぎ", romaji: "Right" },
+                            { kana: "ひだり", romaji: "Left" },
+                            { kana: "うえ", romaji: "Above" },
+                            { kana: "した", romaji: "Below" }
+                        ],
+                        scorable: true
+                    }
+                ]
+            },
+            {
+                id: "final-exam-part2",
+                title: "Final Exam - Grammar",
+                description: "Test your grammar understanding",
+                iconType: 'trophy',
+                isQuiz: true,
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Final Exam: Part 2",
+                        text: "This is the grammar section. Choose the correct particle or form."
+                    },
+                    {
+                        type: 'mcq',
+                        question: "わたし_がくせいです (I am a student)",
+                        options: ["は", "を", "に", "で"],
+                        correctAnswer: "は",
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "すし_たべます (I eat sushi)",
+                        options: ["を", "は", "の", "に"],
+                        correctAnswer: "を",
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "えき_いきます (I go to the station)",
+                        options: ["に", "を", "は", "で"],
+                        correctAnswer: "に",
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "わたし_ほん (my book)",
+                        options: ["の", "は", "が", "を"],
+                        correctAnswer: "の",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "I want to eat sushi",
+                        correctSentence: ["すし", "を", "たべたい"],
+                        scorable: true
+                    }
+                ]
+            },
+            {
+                id: "final-exam-part3",
+                title: "Final Exam - Kanji & Reading",
+                description: "Test your kanji recognition",
+                iconType: 'trophy',
+                isQuiz: true,
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Final Exam: Part 3",
+                        text: "This is the kanji and reading section."
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "一", romaji: "One" },
+                            { kana: "二", romaji: "Two" },
+                            { kana: "三", romaji: "Three" },
+                            { kana: "四", romaji: "Four" }
+                        ],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you read '日'?",
+                        options: ["ひ / にち", "つき", "とし", "じ"],
+                        correctAnswer: "ひ / にち",
+                        scorable: true
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "北", romaji: "North" },
+                            { kana: "南", romaji: "South" },
+                            { kana: "東", romaji: "East" },
+                            { kana: "西", romaji: "West" }
+                        ],
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Let's go to the station",
+                        correctSentence: ["えき", "に", "いきましょう"],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "What is a complete way to say 'This is delicious'?",
+                        options: ["これ は おいしい です", "おいしい これ", "これ おいしい", "です おいしい これ"],
+                        correctAnswer: "これ は おいしい です",
+                        scorable: true,
+                        showRomaji: true
+                    }
+                ]
+            }
+        ]
     }
 ];
 

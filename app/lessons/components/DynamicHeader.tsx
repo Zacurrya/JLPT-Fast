@@ -29,7 +29,8 @@ const DynamicHeader = () => {
     }, []);
 
     const currentChapter = n5Chapters[activeIndex] ?? n5Chapters[0];
-    // If it's a test chapter, show the header for the previous chapter (the one being tested)
+    // If it's a test/exam chapter, show the header for the previous chapter (the one being tested)
+    // For final-exam, just show it as-is
     const displayChapter = currentChapter.id.endsWith('-test')
         ? (n5Chapters[activeIndex - 1] ?? currentChapter)
         : currentChapter;
@@ -46,7 +47,7 @@ const DynamicHeader = () => {
     };
 
     return (
-        <div className="sticky top-20 flex justify-center z-20 pointer-events-none">
+        <div className="sticky top-6 flex justify-center z-20 pointer-events-none mb-8">
             <div className={`relative group px-6 py-4 rounded-2xl shadow-sm w-full max-w-sm mx-4 text-center z-10 border border-white/25
                 bg-gradient-to-b ${theme.primaryGradient} ring-4 ${theme.ringColor} transform transition-all duration-300`}>
 
