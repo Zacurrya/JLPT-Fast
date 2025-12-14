@@ -2,8 +2,6 @@
 
 A comprehensive, interactive learning platform designed to help you master the JLPT N5 exam. From Hiragana basics to essential grammar and vocabulary, this application provides a gamified path to fluency.
 
-![JLPT Fast Banner](public/screenshots/listening-practice.png)
-
 ## 🌟 Key Features
 
 ### 1. Interactive Lessons & Progression
@@ -18,7 +16,7 @@ Reinforce your learning with engaging mini-games:
 
 **Kana Wordsearch**  
 Find hidden words in a grid of characters to test your reading speed and vocabulary recognition.
-![Kana Wordsearch](public/screenshots/kana-wordsearch.png)
+![Kana Wordsearch](public/screenshots/listening-practice.png)
 
 **Smart Quizzes**  
 Test your knowledge with varying question types including Multiple Choice, Matching, and Typing.
