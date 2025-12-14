@@ -20,8 +20,8 @@ const notoSerifJP = Noto_Serif_JP({
 });
 
 export const metadata: Metadata = {
-  title: "Romaji Parser",
-  description: "Learn Kana, Kanji, and Vocab through Romaji",
+  title: "JLPT Fast",
+  description: "Speed your way to a JLPT N5 certification!",
   icons: {
     icon: "/favicon.svg"
   }
