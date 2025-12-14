@@ -1,12 +1,12 @@
 import McqCard from "../../../components/ui/McqCard";
-import { LessonSegment } from "../../data";
+import { InfoCard } from "../../data";
 
 export interface QuizQuestion {
     question: string;
     correctAnswer: string;
     options: string[];
     type: "to-en" | "to-jp";
-    originalSegment: LessonSegment;
+    originalSegment: InfoCard;
 }
 
 interface QuizCardProps {
