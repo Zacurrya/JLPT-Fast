@@ -1,0 +1,30 @@
+model User {
+  id            Int            @id @default(autoincrement())
+  email         String         @unique
+  username      String?
+  lessonProgress LessonProgress[]
+}
+
+model LessonProgress {
+  id        Int     @id @default(autoincrement())
+  userId    Int
+  user      User    @relation(fields: [userId], references: [id])
+  completed Boolean @default(false)
+  progress  Int     @default(0)
+}
+
+model VocabData {
+
+}
+
+model Vocab {
+    
+}
+
+model LessonSettings {
+  showRomaji    Boolean @default(true)
+  
+  id        Int     @id @default(autoincrement())
+  userId    Int
+  user      User    @relation(fields: [userId], references: [id])
+}
