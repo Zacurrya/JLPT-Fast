@@ -170,3 +170,21 @@ h6 {
   background-size: 200% auto;
   animation: shine 3s linear infinite;
 }
+
+/* Ruby text styling for furigana/romaji hints */
+ruby {
+  ruby-align: center;
+}
+
+ruby rt {
+  font-size: 0.4em;
+  color: var(--muted-foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+ruby.ruby-text rt {
+  font-size: 0.35em;
+  opacity: 0.8;
+}

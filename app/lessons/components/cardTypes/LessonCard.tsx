@@ -8,6 +8,7 @@ import { useRomajiTranslation } from "../../../hooks/useRomajiTranslation";
 interface LessonCardProps {
     segment: {
         heading: string;
+        headingReading?: string; // Optional reading hint (romaji/kana)
         text: string;
         example?: {
             jp: string;
@@ -43,7 +44,7 @@ export default function LessonCard({ segment, currentIndex, total, onNext, isLas
     return (
         <div className="max-w-2xl mx-auto w-full flex flex-col min-h-[60vh]">
             {/* Progress */}
-            <div className="mb-8">
+            <div className="mb-8 no-interact-text">
                 <div className="flex justify-between text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">
                     <span>Lesson Progress</span>
                     <span>{currentIndex + 1} / {total}</span>
@@ -66,18 +67,26 @@ export default function LessonCard({ segment, currentIndex, total, onNext, isLas
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: -20 }}
                         transition={{ duration: 0.3 }}
-                        className="flex-1 bg-card border border-border rounded-2xl p-8 md:p-12 shadow-2xl flex flex-col justify-center items-center text-center relative overflow-hidden"
+                        className="flex-1 bg-card border border-border rounded-2xl p-8 md:p-10 shadow-2xl flex flex-col justify-center items-center text-center relative overflow-hidden"
                     >
                         {/* Decorative background element */}
                         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary via-secondary to-primary opacity-50" />
 
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-foreground">
-                            {segment.heading}
+                        <h2 className="no-interact-text text-3xl md:text-4xl font-serif font-bold mb-6 text-foreground">
+                            {segment.headingReading ? (
+                                <ruby className="ruby-text">
+                                    {segment.heading}
+                                    <rp>(</rp>
+                                    <rt className="text-sm font-mono text-muted-foreground font-normal">{segment.headingReading}</rt>
+                                    <rp>)</rp>
+                                </ruby>
+                            ) : (
+                                segment.heading
+                            )}
                         </h2>
 
                         {/* Split text into paragraphs and format */}
-                        {/* Split text into paragraphs and format */}
-                        <div className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 max-w-2xl space-y-4">
+                        <div className="no-interact-text text-base md:text-lg text-muted-foreground leading-relaxed mb-8 max-w-2xl space-y-4">
                             {segment.text.split('\n').map((paragraph: string, idx: number) => {
                                 // Skip empty paragraphs
                                 if (!paragraph.trim()) return null;
@@ -130,7 +139,7 @@ export default function LessonCard({ segment, currentIndex, total, onNext, isLas
                                 if (paragraph.trim().match(/^[-•*]\s/)) {
                                     const content = paragraph.trim().replace(/^[-•*]\s/, '');
                                     return (
-                                        <div key={idx} className="flex items-start gap-2 text-left max-w-md mx-auto">
+                                        <div key={idx} className="flex items-start gap-2 text-center max-w-md mx-auto justify-center">
                                             <span className="text-primary mt-1">•</span>
                                             <p className="flex-1">
                                                 {parseLine(content).map((part, i) => <span key={i}>{part}</span>)}
@@ -140,7 +149,7 @@ export default function LessonCard({ segment, currentIndex, total, onNext, isLas
                                 }
 
                                 return (
-                                    <p key={idx} className="text-left max-w-md mx-auto">
+                                    <p key={idx} className="text-center max-w-2xl mx-auto">
                                         {parseLine(paragraph.trim()).map((part, i) => <span key={i}>{part}</span>)}
                                     </p>
                                 );
@@ -148,7 +157,7 @@ export default function LessonCard({ segment, currentIndex, total, onNext, isLas
                         </div>
 
                         {segment.example && (
-                            <div className="bg-muted/30 rounded-xl p-6 w-full max-w-md border border-border/50">
+                            <div className="bg-muted/30 rounded-xl p-6 border border-border/50 inline-block">
                                 <p className="text-xs font-bold text-primary uppercase tracking-widest mb-4">Example</p>
                                 <div className="space-y-4 text-center">
                                     <div className="mb-2">
@@ -163,7 +172,7 @@ export default function LessonCard({ segment, currentIndex, total, onNext, isLas
 
                         {/* Structure - displayed below example if provided */}
                         {structure && (
-                            <div className="mt-6 bg-gradient-to-br from-orange-50/80 to-red-50/80 dark:from-orange-900/10 dark:to-red-900/10 rounded-2xl p-6 w-full max-w-md border-2 border-orange-200/60 dark:border-orange-700/60 shadow-md">
+                            <div className="mt-6 bg-gradient-to-br from-orange-50/80 to-red-50/80 dark:from-orange-900/10 dark:to-red-900/10 rounded-2xl p-6 border-2 border-orange-200/60 dark:border-orange-700/60 shadow-md inline-block">
                                 <div className="flex items-center justify-center gap-2 mb-3">
                                     <p className="text-xs font-bold text-orange-700 dark:text-orange-300 uppercase tracking-widest">Grammar Structure</p>
                                 </div>

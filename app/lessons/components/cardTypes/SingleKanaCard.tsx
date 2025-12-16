@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Check, X } from 'lucide-react';
 import { useEnterSubmit } from '../../../../hooks/useEnterSubmit';
+import { KanaChar } from '../../../components/ui/KanaChar';
 
 interface SingleKanaCardProps {
     kana: string;
@@ -100,12 +101,14 @@ export default function SingleKanaCard({ kana, romaji, desc, mode, onNext, curre
                         <div className="mb-4">
                             <span className="text-xs font-bold text-primary uppercase tracking-widest">New Character</span>
                         </div>
-                        <span className="text-9xl font-serif font-bold text-foreground block mb-6">
-                            {kana}
-                        </span>
-                        <span className="text-4xl font-mono text-primary font-bold block mb-2">
-                            {romaji}
-                        </span>
+                        <KanaChar
+                            kana={kana}
+                            romaji={romaji}
+                            showRomaji={true}
+                            size="2xl"
+                            className="mb-6"
+                            romajiClassName="!text-2xl !text-primary !font-bold"
+                        />
                         {desc && (
                             <span className="text-sm text-muted-foreground block mt-4">
                                 {desc}
@@ -159,10 +162,12 @@ export default function SingleKanaCard({ kana, romaji, desc, mode, onNext, curre
                 </h3>
 
                 {/* Kana Display */}
-                <div className="bg-muted/30 rounded-xl p-12 mb-8 border border-border/50">
-                    <span className="text-8xl font-serif font-bold text-foreground">
-                        {kana}
-                    </span>
+                <div className="bg-muted/30 rounded-xl p-12 mb-8 border border-border/50 flex justify-center">
+                    <KanaChar
+                        kana={kana}
+                        showRomaji={false}
+                        size="2xl"
+                    />
                 </div>
 
                 {/* Input */}

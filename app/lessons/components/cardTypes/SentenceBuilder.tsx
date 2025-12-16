@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Check, X, RotateCcw } from 'lucide-react';
+import { ArrowRight, Check, X, RotateCcw, Eye } from 'lucide-react';
 
 interface SentenceBuilderProps {
     englishPrompt: string;
@@ -27,6 +27,7 @@ export default function SentenceBuilder({
     const [selectedBlocks, setSelectedBlocks] = useState<string[]>([]);
     const [isChecked, setIsChecked] = useState(false);
     const [isCorrect, setIsCorrect] = useState(false);
+    const [showedAnswer, setShowedAnswer] = useState(false);
 
     // Shuffle blocks on mount and when correctSentence changes
     useEffect(() => {
@@ -36,6 +37,7 @@ export default function SentenceBuilder({
         setSelectedBlocks([]);
         setIsChecked(false);
         setIsCorrect(false);
+        setShowedAnswer(false);
     }, [correctSentence, englishPrompt]); // Reset when prompt changes
 
     // Add Enter key support
@@ -43,7 +45,7 @@ export default function SentenceBuilder({
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === 'Enter') {
                 e.preventDefault();
-                if (isChecked && isCorrect) {
+                if ((isChecked && isCorrect) || showedAnswer) {
                     onNext();
                 } else if (selectedBlocks.length === correctSentence.length && !isChecked) {
                     handleCheck();
@@ -53,10 +55,10 @@ export default function SentenceBuilder({
 
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [isChecked, isCorrect, selectedBlocks, correctSentence.length]);
+    }, [isChecked, isCorrect, selectedBlocks, correctSentence.length, showedAnswer]);
 
     const handleBlockClick = (block: string, index: number) => {
-        if (isChecked) return;
+        if (isChecked || showedAnswer) return;
 
         // Add to selected blocks
         setSelectedBlocks([...selectedBlocks, block]);
@@ -68,7 +70,7 @@ export default function SentenceBuilder({
     };
 
     const handleRemoveBlock = (index: number) => {
-        if (isChecked) return;
+        if (isChecked || showedAnswer) return;
 
         const block = selectedBlocks[index];
 
@@ -94,10 +96,24 @@ export default function SentenceBuilder({
     };
 
     const handleReset = () => {
+        if (showedAnswer) return; // Can't reset after seeing answer
         setSelectedBlocks([]);
         setShuffledBlocks([...correctSentence].sort(() => Math.random() - 0.5));
         setIsChecked(false);
         setIsCorrect(false);
+    };
+
+    const handleSeeAnswer = () => {
+        setSelectedBlocks([...correctSentence]);
+        setShuffledBlocks([]);
+        setShowedAnswer(true);
+        setIsChecked(true);
+        setIsCorrect(false); // Mark as incorrect since they didn't solve it
+
+        // Report 0 score since they gave up
+        if (scorable && onScoreUpdate) {
+            onScoreUpdate(0, 1);
+        }
     };
 
     const progress = currentIndex !== undefined && total !== undefined ? ((currentIndex) / total) * 100 : 0;
@@ -242,31 +258,57 @@ export default function SentenceBuilder({
                 </AnimatePresence>
 
                 {/* Action buttons */}
-                <div className="flex gap-4 justify-center">
-                    {!isChecked ? (
+                <div className="flex gap-4 justify-center flex-wrap">
+                    {!isChecked && !showedAnswer ? (
+                        <>
+                            <button
+                                onClick={handleCheck}
+                                disabled={selectedBlocks.length !== correctSentence.length}
+                                className={`
+                                    px-8 py-4 rounded-full font-bold shadow-lg transition-all flex items-center gap-2
+                                    ${selectedBlocks.length === correctSentence.length
+                                        ? 'bg-primary text-primary-foreground hover:shadow-xl hover:-translate-y-1'
+                                        : 'bg-muted text-muted-foreground cursor-not-allowed opacity-50'
+                                    }
+                                `}
+                            >
+                                Check Answer
+                            </button>
+                            <button
+                                onClick={handleSeeAnswer}
+                                className="px-6 py-4 rounded-full border-2 border-muted-foreground/30 text-muted-foreground font-bold hover:bg-muted/50 transition-all flex items-center gap-2"
+                            >
+                                <Eye className="w-5 h-5" />
+                                See Answer
+                            </button>
+                        </>
+                    ) : showedAnswer ? (
                         <button
-                            onClick={handleCheck}
-                            disabled={selectedBlocks.length !== correctSentence.length}
-                            className={`
-                                px-8 py-4 rounded-full font-bold shadow-lg transition-all flex items-center gap-2
-                                ${selectedBlocks.length === correctSentence.length
-                                    ? 'bg-primary text-primary-foreground hover:shadow-xl hover:-translate-y-1'
-                                    : 'bg-muted text-muted-foreground cursor-not-allowed opacity-50'
-                                }
-                            `}
+                            onClick={onNext}
+                            className="px-8 py-4 rounded-full bg-amber-500 text-white font-bold hover:bg-amber-600 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center gap-2"
                         >
-                            Check Answer
+                            Continue
+                            <ArrowRight className="w-5 h-5" />
                         </button>
                     ) : (
                         <>
                             {!isCorrect && (
-                                <button
-                                    onClick={handleReset}
-                                    className="px-8 py-4 rounded-full border-2 border-primary text-primary font-bold hover:bg-primary/5 transition-all flex items-center gap-2"
-                                >
-                                    <RotateCcw className="w-5 h-5" />
-                                    Try Again
-                                </button>
+                                <>
+                                    <button
+                                        onClick={handleReset}
+                                        className="px-8 py-4 rounded-full border-2 border-primary text-primary font-bold hover:bg-primary/5 transition-all flex items-center gap-2"
+                                    >
+                                        <RotateCcw className="w-5 h-5" />
+                                        Try Again
+                                    </button>
+                                    <button
+                                        onClick={handleSeeAnswer}
+                                        className="px-6 py-4 rounded-full border-2 border-muted-foreground/30 text-muted-foreground font-bold hover:bg-muted/50 transition-all flex items-center gap-2"
+                                    >
+                                        <Eye className="w-5 h-5" />
+                                        See Answer
+                                    </button>
+                                </>
                             )}
                             {isCorrect && (
                                 <button
@@ -283,16 +325,16 @@ export default function SentenceBuilder({
                 </div>
 
                 {/* Keyboard hint */}
-                {!isChecked && selectedBlocks.length === correctSentence.length && (
+                {!isChecked && !showedAnswer && selectedBlocks.length === correctSentence.length && (
                     <div className="mt-6 text-center text-sm text-muted-foreground">
                         Press <span className="mx-1 font-bold border border-border px-2 py-1 rounded bg-muted/50">Enter</span> to check
                     </div>
                 )}
-                {isChecked && isCorrect && (
+                {(isChecked && isCorrect) || showedAnswer ? (
                     <div className="mt-6 text-center text-sm text-muted-foreground">
                         Press <span className="mx-1 font-bold border border-border px-2 py-1 rounded bg-muted/50">Enter</span> to continue
                     </div>
-                )}
+                ) : null}
             </div>
         </div>
     );

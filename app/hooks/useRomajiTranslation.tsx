@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { toRomaji } from 'wanakana';
+import { KanaChar, segmentKana } from '../components/ui/KanaChar';
 
 export const useRomajiTranslation = () => {
     const renderRomaji = useCallback((japanese: string, romaji: string, inline: boolean = false) => {
@@ -82,14 +83,13 @@ export const useRomajiTranslation = () => {
             return (
                 <span className={containerClass}>
                     {segments.map((seg, i) => (
-                        <span key={i} className="flex flex-col items-center leading-none px-0.5">
-                            <span className="text-[0.6rem] md:text-xs font-mono text-muted-foreground/80 mb-0.5 select-none text-center">
-                                {seg.rom}
-                            </span>
-                            <span className={`${inline ? "text-lg md:text-xl" : "text-2xl md:text-3xl"} font-serif font-bold text-foreground`}>
-                                {seg.jp}
-                            </span>
-                        </span>
+                        <KanaChar
+                            key={i}
+                            kana={seg.jp}
+                            romaji={seg.rom}
+                            showRomaji={true}
+                            size={inline ? "sm" : "lg"}
+                        />
                     ))}
                 </span>
             );
@@ -103,14 +103,13 @@ export const useRomajiTranslation = () => {
             return (
                 <span className={containerClass}>
                     {jpParts.map((jp, i) => (
-                        <span key={i} className="flex flex-col items-center leading-none">
-                            <span className="text-[0.6rem] md:text-xs font-mono text-muted-foreground/80 mb-0.5 select-none text-center">
-                                {romajiParts[i]}
-                            </span>
-                            <span className={`${inline ? "text-lg md:text-xl" : "text-2xl md:text-3xl"} font-serif font-bold text-foreground`}>
-                                {jp}
-                            </span>
-                        </span>
+                        <KanaChar
+                            key={i}
+                            kana={jp}
+                            romaji={romajiParts[i]}
+                            showRomaji={true}
+                            size={inline ? "sm" : "lg"}
+                        />
                     ))}
                 </span>
             );
@@ -119,17 +118,16 @@ export const useRomajiTranslation = () => {
         // Default single block if no clear segmentation
         return (
             <span className={containerClass}>
-                <span className="flex flex-col items-center leading-none">
-                    <span className="text-[0.6rem] md:text-xs font-mono text-muted-foreground/80 mb-0.5 select-none text-center">
-                        {romaji}
-                    </span>
-                    <span className={`${inline ? "text-lg md:text-xl" : "text-2xl md:text-3xl"} font-serif font-bold text-foreground`}>
-                        {japanese}
-                    </span>
-                </span>
+                <KanaChar
+                    kana={japanese}
+                    romaji={romaji}
+                    showRomaji={true}
+                    size={inline ? "sm" : "lg"}
+                />
             </span>
         );
     }, []);
 
     return { renderRomaji };
 };
+

@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Check, X } from 'lucide-react';
+import { KanaChar } from '../../../components/ui/KanaChar';
 
 interface KanaMatchingQuizProps {
     characters: { kana: string; romaji: string; desc?: string }[];
@@ -263,7 +264,7 @@ export default function KanaMatchingQuiz({ characters, onComplete, onScoreUpdate
                                 data-kana={char.kana}
                                 onMouseDown={(e) => handleMouseDown(e, char.kana)}
                                 className={`
-                                    w-20 h-20 rounded-xl border-2 text-3xl font-serif font-bold
+                                    min-w-20 min-h-16 px-4 py-3 rounded-xl border-2 flex items-center justify-center
                                     transition-all duration-200 select-none relative z-20
                                     ${isConnected
                                         ? isCorrect
@@ -276,7 +277,11 @@ export default function KanaMatchingQuiz({ characters, onComplete, onScoreUpdate
                                 `}
                                 whileHover={{ scale: 1.05 }}
                             >
-                                {char.kana}
+                                <KanaChar
+                                    kana={char.kana}
+                                    showRomaji={false}
+                                    size="lg"
+                                />
                             </motion.button>
                         );
                     })}
@@ -297,8 +302,8 @@ export default function KanaMatchingQuiz({ characters, onComplete, onScoreUpdate
                                 data-romaji={char.romaji}
                                 onMouseUp={() => handleMouseUp(char.romaji)}
                                 className={`
-                                    w-24 h-20 rounded-xl border-2 text-xl font-mono font-bold
-                                    transition-all duration-200 select-none
+                                    min-w-24 min-h-16 px-4 py-3 rounded-xl border-2 text-lg font-mono font-bold
+                                    transition-all duration-200 select-none flex items-center justify-center
                                     ${isConnected
                                         ? isCorrect
                                             ? 'bg-green-100 dark:bg-green-900/30 border-green-500'

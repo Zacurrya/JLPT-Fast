@@ -10,6 +10,7 @@ import KanaMCQ from "./cardTypes/KanaMCQ";
 import KanaMatchingQuiz from "./cardTypes/KanaMatchingQuiz";
 import McqCard from "../../components/ui/McqCard";
 import SentenceBuilder from "./cardTypes/SentenceBuilder";
+import TextChoiceCard from "./cardTypes/TextChoiceCard";
 
 interface LessonViewProps {
     lesson: Lesson;
@@ -203,6 +204,22 @@ export default function LessonView({ lesson }: LessonViewProps) {
                     <SentenceBuilder
                         englishPrompt={currentCard.englishPrompt}
                         correctSentence={currentCard.correctSentence}
+                        currentIndex={currentCardIndex}
+                        total={lesson.cards.length}
+                        onNext={handleNext}
+                        onScoreUpdate={currentCard.scorable ? (score, total) => handleScoreUpdate(currentCardIndex, score, total) : undefined}
+                        scorable={currentCard.scorable}
+                    />
+                );
+
+            case 'text-choice':
+                return (
+                    <TextChoiceCard
+                        speakerName={currentCard.speakerName}
+                        speakerReading={currentCard.speakerReading}
+                        conversation={currentCard.conversation}
+                        instruction={currentCard.instruction}
+                        choices={currentCard.choices}
                         currentIndex={currentCardIndex}
                         total={lesson.cards.length}
                         onNext={handleNext}

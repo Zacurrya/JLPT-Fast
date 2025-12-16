@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useEnterSubmit } from '../../../../hooks/useEnterSubmit';
+import { KanaChar } from '../../../components/ui/KanaChar';
 
 interface KanaMCQProps {
     characters: { kana: string; romaji: string; desc?: string }[];
@@ -151,10 +152,12 @@ export default function KanaMCQ({ characters, currentIndex, total, onNext, onSco
                     </h2>
 
                     {/* Kana Display */}
-                    <div className="bg-muted/30 rounded-xl p-12 mb-8 border border-border/50">
-                        <span className="text-8xl font-serif font-bold text-foreground">
-                            {currentItem.kana}
-                        </span>
+                    <div className="bg-muted/30 rounded-xl p-12 mb-8 border border-border/50 flex justify-center">
+                        <KanaChar
+                            kana={currentItem.kana}
+                            showRomaji={false}
+                            size="2xl"
+                        />
                     </div>
 
                     {/* Options */}
