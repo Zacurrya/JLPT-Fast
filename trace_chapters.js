@@ -1,6 +1,6 @@
 
 const fs = require('fs');
-const content = fs.readFileSync('app/lessons/lessonData.ts', 'utf8');
+const content = fs.readFileSync('app/data/lessons.ts', 'utf8');
 const lines = content.split('\n');
 lines.forEach((line, index) => {
     if (line.includes('id: "chapter-2-hiragana-1"')) {

@@ -8,6 +8,7 @@ export type CardType =
     | 'mcq'            // Multiple choice quiz
     | 'sentence-builder'  // Build sentence from blocks
     | 'text-choice'    // Conversation-based multiple choice
+    | 'kanji-learn'    // Learn single Kanji
     | 'complete';      // Lesson completion
 
 // Base card interface
@@ -108,6 +109,17 @@ export interface TextChoiceCard extends BaseCard {
     scorable: boolean;
 }
 
+// Kanji learning card
+export interface KanjiLearnCard extends BaseCard {
+    type: 'kanji-learn';
+    kanji: string;
+    meaning: string;
+    onyomi?: string[];
+    kunyomi?: string[];
+    romaji?: string;
+    mnemonic?: string;
+}
+
 // Union type for all cards
 export type LessonCard =
     | InfoCard
@@ -117,4 +129,5 @@ export type LessonCard =
     | TypingCard
     | MCQCard
     | SentenceBuilderCard
-    | TextChoiceCard;
+    | TextChoiceCard
+    | KanjiLearnCard;

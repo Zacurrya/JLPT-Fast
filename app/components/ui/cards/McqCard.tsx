@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import { toRomaji } from "wanakana";
-import { useRomajiTranslation } from "../../hooks/useRomajiTranslation";
+// Hooks live at project root /hooks; use relative path since @hooks alias targets app/hooks
+import { useRomajiTranslation } from "@hooks/useRomajiTranslation";
+import { useMcqNavigation } from "../../../../hooks/useMcqNavigation";
 
 export interface McqOption {
     id: string;
@@ -38,8 +40,6 @@ export interface McqCardProps {
     showRomaji?: boolean;
 }
 
-import { useMcqNavigation } from "../../../hooks/useMcqNavigation";
-
 export default function McqCard({
     question,
     options,
@@ -50,10 +50,10 @@ export default function McqCard({
     onCheckAnswer,
     onNext,
     className = "max-w-2xl mx-auto w-full",
-    cardClassName = "bg-card border border-border rounded-2xl p-8 md:p-12 shadow-xl",
+    cardClassName = "bg-card border border-border rounded-2xl p-5 md:p-12 shadow-xl",
     questionClassName = "text-2xl md:text-3xl font-serif font-bold mb-8 text-center",
     optionClassName = "w-full p-4 rounded-xl border-2 text-left font-medium transition-all duration-200",
-    buttonClassName = "px-8 py-3 bg-primary text-primary-foreground rounded-full font-bold shadow-lg transition-all",
+    buttonClassName = "px-6 py-3 md:px-8 bg-primary text-primary-foreground rounded-full font-bold shadow-lg transition-all",
     checkButtonLabel = "Check Answer",
     nextButtonLabel = "Next",
     currentIndex,

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useEnterSubmit } from '../../../../hooks/useEnterSubmit';
-import { KanaChar } from '../../../components/ui/KanaChar';
+import { KanaChar } from './KanaChar';
 
 interface KanaMCQProps {
     characters: { kana: string; romaji: string; desc?: string }[];
@@ -112,21 +112,6 @@ export default function KanaMCQ({ characters, currentIndex, total, onNext, onSco
 
     return (
         <div className="max-w-2xl mx-auto w-full flex flex-col min-h-[60vh]">
-            {/* Progress */}
-            <div className="mb-8">
-                <div className="flex justify-between text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">
-                    <span>Lesson Progress</span>
-                    <span>{currentIndex + 1} / {total}</span>
-                </div>
-                <div className="h-2 bg-secondary/10 rounded-full overflow-hidden">
-                    <motion.div
-                        className="h-full bg-primary"
-                        initial={{ width: 0 }}
-                        animate={{ width: `${progress}%` }}
-                    />
-                </div>
-            </div>
-
             {/* Card */}
             <div className="flex-1 flex flex-col">
                 <motion.div

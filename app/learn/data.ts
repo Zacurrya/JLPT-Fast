@@ -1,19 +1,4 @@
-// Re-export all card types from cardTypes.ts
-export {
-    type CardType,
-    type BaseCard,
-    type InfoCard,
-    type KanaLearnCard,
-    type KanaMCQCard,
-    type KanaMatchingCard,
-    type TypingCard,
-    type MCQCard,
-    type SentenceBuilderCard,
-    type TextChoiceCard,
-    type LessonCard,
-} from './cardTypes';
-
-import { LessonCard } from './cardTypes';
+import { LessonCard } from '../lesson/data/cardTypes';
 
 // Lesson interface
 export interface Lesson {

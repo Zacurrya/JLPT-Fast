@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Check, X } from 'lucide-react';
 import { useEnterSubmit } from '../../../../hooks/useEnterSubmit';
-import { KanaChar } from '../../../components/ui/KanaChar';
+import { KanaChar } from './KanaChar';
 
 interface SingleKanaCardProps {
     kana: string;
@@ -75,23 +75,6 @@ export default function SingleKanaCard({ kana, romaji, desc, mode, onNext, curre
     if (mode === 'learn') {
         return (
             <div className="max-w-2xl mx-auto w-full flex flex-col min-h-[60vh]">
-                {/* Progress */}
-                {currentIndex !== undefined && total !== undefined && (
-                    <div className="mb-8">
-                        <div className="flex justify-between text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">
-                            <span>Lesson Progress</span>
-                            <span>{currentIndex + 1} / {total}</span>
-                        </div>
-                        <div className="h-2 bg-secondary/10 rounded-full overflow-hidden">
-                            <motion.div
-                                className="h-full bg-primary"
-                                initial={{ width: 0 }}
-                                animate={{ width: `${progress}%` }}
-                            />
-                        </div>
-                    </div>
-                )}
-
                 <div className="flex-1 flex flex-col items-center justify-center text-center">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -135,23 +118,6 @@ export default function SingleKanaCard({ kana, romaji, desc, mode, onNext, curre
     // Quiz mode
     return (
         <div className="max-w-2xl mx-auto w-full flex flex-col min-h-[60vh]">
-            {/* Progress */}
-            {currentIndex !== undefined && total !== undefined && (
-                <div className="mb-8">
-                    <div className="flex justify-between text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">
-                        <span>Lesson Progress</span>
-                        <span>{currentIndex + 1} / {total}</span>
-                    </div>
-                    <div className="h-2 bg-secondary/10 rounded-full overflow-hidden">
-                        <motion.div
-                            className="h-full bg-primary"
-                            initial={{ width: 0 }}
-                            animate={{ width: `${progress}%` }}
-                        />
-                    </div>
-                </div>
-            )}
-
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

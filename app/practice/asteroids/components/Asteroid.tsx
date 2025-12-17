@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { VocabItem } from "../utils/vocabularyData";
-import { KanaChar } from "../../../components/ui/KanaChar";
-import { KanjiChar } from "../../../components/ui/KanjiChar";
+import { KanaChar } from "../../../components/ui/cards/KanaChar";
+import { KanjiChar } from "../../../components/ui/cards/KanjiChar";
 
 interface AsteroidProps {
     id: string;

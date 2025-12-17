@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Check, X } from 'lucide-react';
-import { KanaChar } from '../../../components/ui/KanaChar';
+import { KanaChar } from './KanaChar';
 
 interface KanaMatchingQuizProps {
     characters: { kana: string; romaji: string; desc?: string }[];

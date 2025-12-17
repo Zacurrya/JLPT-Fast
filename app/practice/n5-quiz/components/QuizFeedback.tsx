@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Question } from "../contexts/types";
-import { KanaText } from "../../../components/ui/KanaChar";
+import { KanaText } from "../../../components/ui/cards/KanaChar";
 
 interface QuizFeedbackProps {
     feedback: "correct" | "incorrect";

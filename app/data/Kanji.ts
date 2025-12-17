@@ -1,4 +1,4 @@
-export interface Kanji {
+export interface kanji {
     character: string;
     onyomi: string[];
     kunyomi: string[];
@@ -10,7 +10,7 @@ export interface Kanji {
     }[];
 }
 
-export const n5Kanji: Kanji[] = [
+export const n5Kanji: kanji[] = [
     {
         character: "日",
         onyomi: ["ニチ", "ジツ"],

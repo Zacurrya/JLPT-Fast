@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, User } from 'lucide-react';
 import { useTypingEffect } from '../../../../hooks/useTypingEffect';
-import { HintTooltip } from '../../../components/ui/HintTooltip';
+import { HintTooltip } from '../HintTooltip';
 
 interface ConversationMessage {
     speaker: string;
@@ -147,21 +147,6 @@ export default function TextChoiceCard({
 
     return (
         <div className="max-w-2xl mx-auto w-full flex flex-col min-h-[60vh]">
-            {/* Progress */}
-            <div className="mb-6">
-                <div className="flex justify-between text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">
-                    <span>Lesson Progress</span>
-                    <span>{currentIndex + 1} / {total}</span>
-                </div>
-                <div className="h-2 bg-secondary/10 rounded-full overflow-hidden">
-                    <motion.div
-                        className="h-full bg-primary"
-                        initial={{ width: 0 }}
-                        animate={{ width: `${progress}%` }}
-                    />
-                </div>
-            </div>
-
             {/* Conversation Card */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

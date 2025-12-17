@@ -2,12 +2,12 @@
 
 import { CheckCircle, RotateCcw, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { n5Lessons } from "../lessonData";
+import { n5Lessons } from "../data/lessons";
 import Confetti from 'react-confetti';
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { useKeyboardNavigation } from "../../hooks/useKeyboardNavigation";
+import { useKeyboardNavigation } from "@hooks/useKeyboardNavigation";
 
 interface LessonCompleteProps {
     score: number;

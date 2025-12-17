@@ -1,15 +1,15 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, RefreshCw, Trophy, CheckCircle, Search } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { RefreshCw, Trophy, CheckCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { BackButton } from "../asteroids/components/BackButton";
 import Confetti from 'react-confetti';
 import { useWindowSize } from 'react-use';
 
 import * as wanakana from 'wanakana';
-import { n5Kanji } from "../../data/Kanji";
+import { n5Kanji } from "@data/kanji";
 
 // Define vocab set
 const N5_VOCAB = [
@@ -73,7 +73,7 @@ export default function WordSearchPage() {
     useEffect(() => {
         startNewGame();
     }, []);
-
+    
     const startNewGame = () => {
         setGameWon(false);
         const { newGrid, placedWords } = generateGrid(8); // Place 8 random words

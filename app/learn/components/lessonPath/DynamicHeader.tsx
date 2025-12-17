@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { n5Chapters } from '../lessonData';
+import { n5Chapters } from '../../../data/lessons';
 import { ChapterNumberBadge } from './ChapterNumberBadge';
 
 const DynamicHeader = () => {
@@ -47,9 +47,9 @@ const DynamicHeader = () => {
     };
 
     return (
-        <div className="sticky top-6 flex justify-center z-20 pointer-events-none mb-8">
-            <div className={`relative group px-6 py-4 rounded-2xl shadow-sm w-full max-w-sm mx-4 text-center z-10 border border-white/25
-                bg-gradient-to-b ${theme.primaryGradient} ring-4 ${theme.ringColor} transform transition-all duration-300`}>
+        <div className="sticky top-6 z-100 pointer-events-none mb-8 flex justify-center">
+            <div className={`relative group px-6 py-4 rounded-2xl shadow-sm w-full max-w-sm mx-4 text-center z-10 
+                bg-linear-to-b ${theme.primaryGradient} ring-4 ${theme.ringColor} transform transition-all duration-300`}>
 
                 <ChapterNumberBadge
                     number={displayChapter.number}
@@ -59,12 +59,10 @@ const DynamicHeader = () => {
                 />
 
                 <div className="flex items-center justify-center gap-4 pointer-events-auto pl-10">
-                    <div className="text-center">
-                        <h2 className={`text-xl font-bold ${theme.textColors.title}`}>{displayChapter.title}</h2>
+                    <div className="font-serif">
+                        <h2 className={`text-xl font-semibold ${theme.textColors.title}`}>{displayChapter.title}</h2>
                     </div>
                 </div>
-
-                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-20 h-3 bg-white/20 rounded-full blur-sm" />
             </div>
         </div>
     );

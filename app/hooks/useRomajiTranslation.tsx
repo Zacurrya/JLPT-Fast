@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { toRomaji } from 'wanakana';
-import { KanaChar, segmentKana } from '../components/ui/KanaChar';
+import { KanaChar, segmentKana } from '../components/ui/cards/KanaChar';
 
 export const useRomajiTranslation = () => {
     const renderRomaji = useCallback((japanese: string, romaji: string, inline: boolean = false) => {

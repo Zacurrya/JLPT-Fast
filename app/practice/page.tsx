@@ -33,22 +33,22 @@ const VideoSection = ({ title, options, delayOffset = 0 }: { title: string, opti
 
     return (
         <div className="mb-16">
-            <h2 className="text-2xl font-serif font-bold text-gray-800 mb-6 flex items-center gap-2">
+            <h2 className="text-2xl font-serif font-semibold tracking-wider text-foreground mb-6 flex items-center gap-2">
                 {title}
-                <div className="h-px bg-gray-200 flex-1 ml-4" />
+                <div className="h-px bg-border flex-1 ml-4" />
             </h2>
 
             <div className="relative group/carousel">
                 <button
                     onClick={scrollLeft}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 bg-white p-3 rounded-full shadow-lg border border-gray-100 text-gray-700 opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-gray-50 hover:scale-110 hidden md:block"
+                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 bg-card p-3 rounded-full shadow-lg border border-border text-foreground opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-muted hover:scale-110 hidden md:block"
                 >
                     <ChevronLeft size={24} />
                 </button>
 
                 <button
                     onClick={scrollRight}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 bg-white p-3 rounded-full shadow-lg border border-gray-100 text-gray-700 opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-gray-50 hover:scale-110 hidden md:block"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 bg-card p-3 rounded-full shadow-lg border border-border text-foreground opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-muted hover:scale-110 hidden md:block"
                 >
                     <ChevronRight size={24} />
                 </button>
@@ -65,8 +65,8 @@ const VideoSection = ({ title, options, delayOffset = 0 }: { title: string, opti
                             transition={{ delay: (index * 0.1) + delayOffset }}
                             className="flex-none w-[60vw] md:w-[400px] snap-center"
                         >
-                            <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 group">
-                                <div className="aspect-video w-full bg-gray-900 relative">
+                            <div className="bg-card rounded-3xl overflow-hidden shadow-lg border border-border group">
+                                <div className="aspect-video w-full bg-background relative">
                                     <iframe
                                         className="w-full h-full"
                                         src={option.href}
@@ -76,8 +76,8 @@ const VideoSection = ({ title, options, delayOffset = 0 }: { title: string, opti
                                     />
                                 </div>
                                 <div className="p-6">
-                                    <h3 className="text-xl font-bold text-gray-900 mb-2 truncate">{option.title}</h3>
-                                    <p className="text-gray-500 text-sm line-clamp-2">{option.description}</p>
+                                    <h3 className="text-xl font-bold text-foreground mb-2 truncate">{option.title}</h3>
+                                    <p className="text-muted-foreground text-sm line-clamp-2">{option.description}</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -199,9 +199,9 @@ export default function PracticePage() {
 
     const renderSection = (title: string, options: PracticeOption[], delayOffset: number = 0) => (
         <div className="mb-16">
-            <h2 className="text-2xl font-serif font-bold text-gray-800 mb-6 flex items-center gap-2">
+            <h2 className="text-2xl font-serif font-bold tracking-wider text-foreground mb-6 flex items-center gap-2">
                 {title}
-                <div className="h-px bg-gray-200 flex-1 ml-4" />
+                <div className="h-px bg-border flex-1 ml-4" />
             </h2>
 
             {options.length > 0 ? (
@@ -221,12 +221,12 @@ export default function PracticePage() {
                                     target={isExternal ? "_blank" : undefined}
                                     rel={isExternal ? "noopener noreferrer" : undefined}
                                 >
-                                    <div className={`group relative h-full bg-white rounded-3xl p-8 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border ${option.borderColor} transition-all duration-300 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] hover:-translate-y-2 cursor-pointer overflow-hidden`}>
-                                        <div className={`absolute inset-0 bg-gradient-to-br ${option.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+                                    <div className="group relative h-full bg-card rounded-3xl p-8 shadow-xl border border-border transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer overflow-hidden">
+                                        <div className={`absolute inset-0 bg-gradient-to-br ${option.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
 
                                         <Icon
                                             size={120}
-                                            className="absolute -right-6 -bottom-6 text-gray-900 opacity-[0.03] group-hover:opacity-[0.08] transition-all duration-300 -rotate-12 pointer-events-none"
+                                            className="absolute -right-6 -bottom-6 text-foreground opacity-[0.03] group-hover:opacity-[0.08] transition-all duration-300 -rotate-12 pointer-events-none"
                                         />
 
                                         <div className="relative z-10">
@@ -234,15 +234,15 @@ export default function PracticePage() {
                                                 <Icon size={24} />
                                             </div>
 
-                                            <h3 className="text-xl font-bold text-gray-900 mb-2">
+                                            <h3 className="text-xl font-bold text-foreground mb-2">
                                                 {option.title}
                                             </h3>
 
-                                            <p className="text-sm text-gray-500 leading-relaxed mb-4">
+                                            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                                                 {option.description}
                                             </p>
 
-                                            <div className="inline-flex items-center gap-2 text-xs font-bold text-gray-400 group-hover:text-gray-900 transition-colors uppercase tracking-wider">
+                                            <div className="inline-flex items-center gap-2 text-xs font-bold text-muted-foreground group-hover:text-foreground transition-colors uppercase tracking-wider">
                                                 <span>{isExternal ? "Watch" : "Start"}</span>
                                                 <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="transition-transform group-hover:translate-x-1">
                                                     <path d="M6 3L11 8L6 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -256,9 +256,9 @@ export default function PracticePage() {
                     })}
                 </div>
             ) : (
-                <div className="bg-gray-50 rounded-2xl p-8 text-center border border-dashed border-gray-200">
-                    <MonitorPlay className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-                    <p className="text-gray-500">Video lessons coming soon!</p>
+                <div className="bg-muted/30 rounded-2xl p-8 text-center border border-dashed border-border">
+                    <MonitorPlay className="w-12 h-12 text-muted-foreground mx-auto mb-3" />
+                    <p className="text-muted-foreground">Video lessons coming soon!</p>
                 </div>
             )}
         </div>
@@ -267,17 +267,17 @@ export default function PracticePage() {
 
 
     return (
-        <div className="pt-20 min-h-screen w-full bg-[#FAFAFA] text-gray-900">
+        <div className="pt-20 min-h-screen w-full bg-background text-foreground">
             <div className="max-w-6xl mx-auto px-4 py-12">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-16"
                 >
-                    <h1 className="text-5xl font-serif font-bold text-gray-900 mb-4">
+                    <h1 className="text-5xl font-serif font-semibold tracking-wider text-foreground mb-4">
                         Practice Hub
                     </h1>
-                    <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                         Learning should be varied and fun. Here are methods to keep you engaged through your learning journey.
                     </p>
                 </motion.div>

@@ -1,6 +1,6 @@
 
 const fs = require('fs');
-const content = fs.readFileSync('app/lessons/lessonData.ts', 'utf8');
+const content = fs.readFileSync('app/data/lessons.ts', 'utf8');
 const regex = /id:\s*["']([^"']+)["'],\s*number:\s*(\d+),\s*title:\s*["']([^"']+)["']/g;
 let match;
 while ((match = regex.exec(content)) !== null) {

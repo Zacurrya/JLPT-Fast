@@ -8,12 +8,12 @@ export const n5Chapters: Chapter[] = [
         description: "Begin your journey",
         image: "/chapter-images/chapter-1.png",
         theme: {
-            primaryGradient: "from-[#FF5252] to-[#F44336]",
-            secondaryGradient: "from-red-600 to-orange-600",
+            primaryGradient: "from-[#bc2823] to-[#8B1E1A]",
+            secondaryGradient: "from-[#d6403b] to-[#bc2823]",
             ringColor: "ring-red-200",
             textColors: {
-                title: "text-yellow-100",
-                description: "text-yellow-50/90"
+                title: "text-red-50",
+                description: "text-red-100/90"
             }
         },
         lessons: [
@@ -65,7 +65,12 @@ export const n5Chapters: Chapter[] = [
                     {
                         type: 'info',
                         heading: "What is Romaji?",
-                        text: "Romaji uses the English alphabet to represent Japanese sounds. It helps beginners read until they master Hiragana.\n\nExample:\n<b>あ</b> (Hiragana) = <b>a</b> (Romaji)"
+                        text: "Romaji uses the English alphabet to represent Japanese sounds. It helps beginners read until they master Hiragana.",
+                        example: {
+                            jp: "あ",
+                            romaji: "a",
+                            en: "Hiragana 'a'"
+                        }
                     },
                     {
                         type: 'info',
@@ -375,6 +380,18 @@ export const n5Chapters: Chapter[] = [
                             { text: "ありがとう", isCorrect: false }
                         ],
                         scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Sushi please",
+                        correctSentence: ["すし", "を", "ください"],
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Sushi and water please",
+                        correctSentence: ["すし", "と", "みず", "を", "ください"],
+                        scorable: true
                     }
                 ]
             }
@@ -428,6 +445,25 @@ export const n5Chapters: Chapter[] = [
                         targetKana: "おはようございます",
                         meaning: "Good morning",
                         romaji: "Ohayō gozaimasu"
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Sushi please",
+                        correctSentence: ["すし", "を", "ください"],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say 'and' when listing items?",
+                        options: ["と", "は", "を", "の"],
+                        correctAnswer: "と",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Green tea and sushi",
+                        correctSentence: ["おちゃ", "と", "すし"],
+                        scorable: true
                     }
                 ]
             }
@@ -493,8 +529,13 @@ export const n5Chapters: Chapter[] = [
                     },
                     {
                         type: 'info',
-                        heading: "Example",
-                        text: "がくせいです (Gakusei desu) = I am a student."
+                        heading: "Using です",
+                        text: "Here is an example of how to use です:",
+                        example: {
+                            jp: "がくせい です",
+                            romaji: "gakusei desu",
+                            en: "I am a student"
+                        }
                     },
                     {
                         type: 'mcq',
@@ -615,6 +656,347 @@ export const n5Chapters: Chapter[] = [
                         englishPrompt: "My book",
                         correctSentence: ["わたし", "の", "ほん"],
                         scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "What does です mean?",
+                        options: ["am/is/are (polite)", "and", "have", "want"],
+                        correctAnswer: "am/is/are (polite)",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "I am Japanese",
+                        correctSentence: ["わたし", "は", "にほんじん", "です"],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "When can you drop わたしは?",
+                        options: ["When context is clear", "Never", "Always", "Only in writing"],
+                        correctAnswer: "When context is clear",
+                        scorable: true
+                    }
+                ]
+            }
+        ]
+    },
+    // ========================================
+    // CHAPTER: FAMILY & PEOPLE
+    // ========================================
+    {
+        id: "chapter-family",
+        number: 3,
+        title: "Family & People",
+        description: "Describing your family and relationships",
+        image: "/chapter-images/chapter-3.png",
+        theme: {
+            primaryGradient: "from-rose-400 to-pink-500",
+            secondaryGradient: "from-rose-600 to-pink-600",
+            ringColor: "ring-rose-200",
+            textColors: {
+                title: "text-rose-50",
+                description: "text-rose-100/90"
+            }
+        },
+        lessons: [
+            {
+                id: "family-basics",
+                title: "Family Members",
+                description: "Learn words for family members",
+                iconType: 'people',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Family in Japanese",
+                        text: "Japanese has two sets of family terms:\n\n• Humble terms (for your own family)\n• Honorific terms (for someone else's family)"
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "かぞく", romaji: "kazoku", desc: "Family" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "おとうさん", romaji: "otousan", desc: "Father (polite)" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "ちち", romaji: "chichi", desc: "Father (humble)" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "おかあさん", romaji: "okaasan", desc: "Mother (polite)" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "はは", romaji: "haha", desc: "Mother (humble)" }
+                        ]
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "おとうさん", romaji: "Father" },
+                            { kana: "おかあさん", romaji: "Mother" },
+                            { kana: "ちち", romaji: "My father" },
+                            { kana: "はは", romaji: "My mother" }
+                        ],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "When talking about your own father, you use:",
+                        options: ["ちち", "おとうさん", "パパ", "ちちおや"],
+                        correctAnswer: "ちち",
+                        scorable: true
+                    }
+                ]
+            },
+            {
+                id: "siblings",
+                title: "Siblings",
+                description: "Brothers and sisters",
+                iconType: 'people',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Siblings",
+                        text: "In Japanese, older and younger siblings have different words."
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "おにいさん", romaji: "oniisan", desc: "Older brother (polite)" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "あに", romaji: "ani", desc: "Older brother (humble)" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "おねえさん", romaji: "oneesan", desc: "Older sister (polite)" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "あね", romaji: "ane", desc: "Older sister (humble)" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "おとうと", romaji: "otouto", desc: "Younger brother" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "いもうと", romaji: "imouto", desc: "Younger sister" }
+                        ]
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "あに", romaji: "My older brother" },
+                            { kana: "あね", romaji: "My older sister" },
+                            { kana: "おとうと", romaji: "Younger brother" },
+                            { kana: "いもうと", romaji: "Younger sister" }
+                        ],
+                        scorable: true
+                    }
+                ]
+            },
+            {
+                id: "describing-family",
+                title: "Describing Family",
+                description: "Talk about your family",
+                iconType: 'book',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Describing Family Members",
+                        text: "Use the patterns you've learned to describe your family members.",
+                        structure: "[Family member] は [description] です",
+                        example: {
+                            jp: "ちち は せんせい です",
+                            romaji: "chichi wa sensei desu",
+                            en: "My father is a teacher"
+                        }
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "My mother is a teacher",
+                        correctSentence: ["はは", "は", "せんせい", "です"],
+                        scorable: true
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "がくせい", romaji: "gakusei", desc: "Student" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "いしゃ", romaji: "isha", desc: "Doctor" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "かいしゃいん", romaji: "kaishain", desc: "Company employee" }
+                        ]
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "My older brother is a student",
+                        correctSentence: ["あに", "は", "がくせい", "です"],
+                        scorable: true
+                    },
+                    {
+                        type: 'text-choice',
+                        speakerName: "ともだち",
+                        speakerReading: "ともだち",
+                        conversation: [
+                            { speaker: "ともだち", text: "おかあさんのしごとはなんですか？", hint: "What is your mother's job?", showHintIcon: true },
+                            { speaker: "You", text: ". . .", isUser: true }
+                        ],
+                        instruction: "Your mother is a doctor. How do you answer?",
+                        choices: [
+                            { text: "ははは いしゃ です", isCorrect: true },
+                            { text: "おかあさんは いしゃ です", isCorrect: false },
+                            { text: "ママは いしゃ です", isCorrect: false }
+                        ],
+                        scorable: true
+                    }
+                ]
+            },
+            {
+                id: "family-age",
+                title: "Age & Family Size",
+                description: "How old and how many",
+                iconType: 'people',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Asking Age",
+                        text: "To ask 'How old?', use なんさい (nan sai).\n\nThe counter さい is for age.",
+                        structure: "[Person] は なんさい ですか",
+                        example: {
+                            jp: "おとうとは なんさい ですか",
+                            romaji: "otouto wa nan sai desu ka",
+                            en: "How old is your younger brother?"
+                        }
+                    },
+                    {
+                        type: 'info',
+                        heading: "Saying Age",
+                        text: "To say age, use the number + さい.\n\n10 years old = じゅっさい\n20 years old = はたち (special!)",
+                        example: {
+                            jp: "わたし は にじゅうさい です",
+                            romaji: "watashi wa nijuu sai desu",
+                            en: "I am 20 years old"
+                        }
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "I am 18 years old",
+                        correctSentence: ["わたし", "は", "じゅうはっさい", "です"],
+                        scorable: true
+                    },
+                    {
+                        type: 'info',
+                        heading: "How Many People?",
+                        text: "To count people in a family, use にん.\n\n1 person = ひとり (special)\n2 people = ふたり (special)\n3 people = さんにん",
+                        example: {
+                            jp: "かぞくは よにん です",
+                            romaji: "kazoku wa yo nin desu",
+                            en: "There are 4 people in my family"
+                        }
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say '3 people'?",
+                        options: ["さんにん", "さんひと", "みっつ", "さんさい"],
+                        correctAnswer: "さんにん",
+                        scorable: true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: "chapter-family-test",
+        number: 3,
+        title: "Family Review",
+        description: "Test your family vocabulary",
+        theme: {
+            primaryGradient: "from-slate-700 to-slate-800",
+            secondaryGradient: "from-slate-600 to-slate-700",
+            ringColor: "ring-slate-400",
+            textColors: {
+                title: "text-slate-100",
+                description: "text-slate-300"
+            }
+        },
+        lessons: [
+            {
+                id: "family-review",
+                title: "Family Exam",
+                description: "Final assessment for this chapter",
+                iconType: "question",
+                isQuiz: true,
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Family Review",
+                        text: "Let's review family vocabulary and describing family members."
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "ちち", romaji: "My father" },
+                            { kana: "はは", romaji: "My mother" },
+                            { kana: "あに", romaji: "My older brother" },
+                            { kana: "あね", romaji: "My older sister" }
+                        ],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "Which is used when talking about someone else's mother?",
+                        options: ["おかあさん", "はは", "ママ", "かあさん"],
+                        correctAnswer: "おかあさん",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "My father is a doctor",
+                        correctSentence: ["ちち", "は", "いしゃ", "です"],
+                        scorable: true
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "おとうと", romaji: "Younger brother" },
+                            { kana: "いもうと", romaji: "Younger sister" },
+                            { kana: "がくせい", romaji: "Student" },
+                            { kana: "いしゃ", romaji: "Doctor" }
+                        ],
+                        scorable: true
                     }
                 ]
             }
@@ -622,10 +1004,10 @@ export const n5Chapters: Chapter[] = [
     },
     {
         id: "chapter-3-numbers-kanji",
-        number: 3,
+        number: 4,
         title: "Numbers & Basic Kanji",
         description: "Counting and reading your first Kanji characters",
-        image: "/chapter-images/chapter-3.png",
+        image: "/chapter-images/chapter-4.png",
 
         theme: {
             primaryGradient: "from-emerald-400 to-emerald-600",
@@ -702,22 +1084,31 @@ export const n5Chapters: Chapter[] = [
                         text: "Kanji are characters borrowed from Chinese. Each character has a meaning.\nUse your imagination to remember them!"
                     },
                     {
-                        type: 'kana-learn',
-                        characters: [
-                            { kana: "一", romaji: "ichi", desc: "One (One line)" }
-                        ]
+                        type: 'kanji-learn',
+                        kanji: "一",
+                        meaning: "One",
+                        onyomi: ["いち", "いつ"],
+                        kunyomi: ["ひと"],
+                        romaji: "ichi",
+                        mnemonic: "One horizontal line."
                     },
                     {
-                        type: 'kana-learn',
-                        characters: [
-                            { kana: "二", romaji: "ni", desc: "Two (Two lines)" }
-                        ]
+                        type: 'kanji-learn',
+                        kanji: "二",
+                        meaning: "Two",
+                        onyomi: ["に"],
+                        kunyomi: ["ふた"],
+                        romaji: "ni",
+                        mnemonic: "Two horizontal lines."
                     },
                     {
-                        type: 'kana-learn',
-                        characters: [
-                            { kana: "三", romaji: "san", desc: "Three (Three lines)" }
-                        ]
+                        type: 'kanji-learn',
+                        kanji: "三",
+                        meaning: "Three",
+                        onyomi: ["さん"],
+                        kunyomi: ["み"],
+                        romaji: "san",
+                        mnemonic: "Three horizontal lines."
                     },
                     {
                         type: 'mcq',
@@ -870,6 +1261,35 @@ export const n5Chapters: Chapter[] = [
                         options: ["一", "二", "三"],
                         correctAnswer: "一",
                         scorable: true
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "一", romaji: "One" },
+                            { kana: "二", romaji: "Two" },
+                            { kana: "三", romaji: "Three" },
+                            { kana: "四", romaji: "Four" }
+                        ],
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "25 (twenty-five)",
+                        correctSentence: ["に", "じゅう", "ご"],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say '3 o'clock'?",
+                        options: ["さんじ", "さん", "さんねん", "さんご"],
+                        correctAnswer: "さんじ",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "What time is it?",
+                        correctSentence: ["なんじ", "ですか"],
+                        scorable: true
                     }
                 ]
             }
@@ -877,9 +1297,10 @@ export const n5Chapters: Chapter[] = [
     },
     {
         id: "chapter-4-directions",
-        number: 4,
+        number: 5,
         title: "Directions & Locations",
         description: "Navigating your way around",
+        image: "/chapter-images/chapter-5.png",
         theme: {
             primaryGradient: "from-violet-500 to-purple-600",
             secondaryGradient: "from-purple-600 to-indigo-600",
@@ -891,27 +1312,81 @@ export const n5Chapters: Chapter[] = [
         },
         lessons: [
             {
-                id: "positions-basics",
-                title: "Positions: Up, Down, Left, Right",
-                description: "Learn relative positions",
+                id: "positions-up-down",
+                title: "Up & Down",
+                description: "Learn 'Above' and 'Below'",
                 iconType: 'location',
                 cards: [
                     {
                         type: 'info',
-                        heading: "Relative Positions",
-                        text: "In Japanese, positions like 'above' or 'right' are nouns. We use them with particles to describe where things are."
+                        heading: "Positions",
+                        text: "In Japanese, words like 'Up' and 'Down' are nouns. We connect them with other words using the particle の (no)."
                     },
                     {
                         type: 'kana-learn',
                         characters: [
-                            { kana: "うえ", romaji: "ue", desc: "Above / On top" }
+                            { kana: "うえ", romaji: "ue", desc: "Above / Up" }
                         ]
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Above",
+                        correctSentence: ["うえ"],
+                        scorable: true
                     },
                     {
                         type: 'kana-learn',
                         characters: [
-                            { kana: "した", romaji: "shita", desc: "Below / Under" }
+                            { kana: "した", romaji: "shita", desc: "Below / Down" }
                         ]
+                    },
+                    {
+                        type: 'mcq',
+                        question: "What is 'Below' in Japanese?",
+                        options: ["した", "うえ", "なか", "そと"],
+                        correctAnswer: "した",
+                        scorable: true
+                    },
+                    {
+                        type: 'info',
+                        heading: "Using Positions",
+                        text: "To say 'On the table', we literally say 'Table's Above'.\n\nTable = テーブル (Teeburu).",
+                        structure: "[Object] の [Position]"
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "On the table",
+                        correctSentence: ["テーブル", "の", "うえ"],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say 'Under the table'?",
+                        options: ["テーブル の した", "テーブル の うえ", "した の テーブル"],
+                        correctAnswer: "テーブル の した",
+                        scorable: true
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "うえ", romaji: "Above" },
+                            { kana: "した", romaji: "Below" },
+                            { kana: "テーブル", romaji: "Table" }
+                        ],
+                        scorable: true
+                    }
+                ]
+            },
+            {
+                id: "positions-left-right",
+                title: "Left, Right & Places",
+                description: "Learn 'Left', 'Right' and common places",
+                iconType: 'location',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Left & Right",
+                        text: "Now let's learn Left and Right, along with some places to practice."
                     },
                     {
                         type: 'kana-learn',
@@ -922,53 +1397,48 @@ export const n5Chapters: Chapter[] = [
                     {
                         type: 'kana-learn',
                         characters: [
+                            { kana: "えき", romaji: "eki", desc: "Station" }
+                        ]
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "The station is on the right",
+                        correctSentence: ["えき", "は", "みぎ", "です"],
+                        scorable: true
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
                             { kana: "ひだり", romaji: "hidari", desc: "Left" }
                         ]
                     },
                     {
-                        type: 'info',
-                        heading: "Describing Location",
-                        text: "To say 'On the table', we say 'Table's above'.\n\nStructure: [Reference] の [Position]",
-                        example: {
-                            jp: "テーブル の うえ",
-                            romaji: "teeburu no ue",
-                            en: "On (top of) the table"
-                        }
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "こうえん", romaji: "kouen", desc: "Park" }
+                        ]
                     },
                     {
                         type: 'mcq',
-                        question: "How do you say 'Under the chair'?",
-                        options: ["いす の した", "いす の うえ", "いす の みぎ", "した の いす"],
-                        correctAnswer: "いす の した",
+                        question: "Where is the park?",
+                        options: ["こうえん は ひだり です", "こうえん は みぎ です"],
+                        correctAnswer: "こうえん は ひだり です",
                         scorable: true,
                         showRomaji: true
                     },
                     {
-                        type: 'kana-matching',
-                        characters: [
-                            { kana: "うえ", romaji: "Above" },
-                            { kana: "した", romaji: "Below" },
-                            { kana: "みぎ", romaji: "Right" },
-                            { kana: "ひだり", romaji: "Left" }
-                        ],
+                        type: 'sentence-builder',
+                        englishPrompt: "The park is on the left",
+                        correctSentence: ["こうえん", "は", "ひだり", "です"],
                         scorable: true
                     },
                     {
-                        type: 'text-choice',
-                        speakerName: "通行人",
-                        speakerReading: "つうこうにん",
-                        conversation: [
-                            { speaker: "You", text: "すみません", hint: "Excuse me" },
-                            { speaker: "通行人", text: "はい？", hint: "Yes?", showHintIcon: true },
-                            { speaker: "You", text: "えきはどこですか？", hint: "Where is the station?" },
-                            { speaker: "通行人", text: "えきは...あそこです", hint: "The station is... over there", showHintIcon: true },
-                            { speaker: "通行人", text: "?", isUser: true }
-                        ],
-                        instruction: "The person is pointing to the right. Which direction word fits?",
-                        choices: [
-                            { text: "みぎです", isCorrect: true },
-                            { text: "ひだりです", isCorrect: false },
-                            { text: "うえです", isCorrect: false }
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "みぎ", romaji: "Right" },
+                            { kana: "ひだり", romaji: "Left" },
+                            { kana: "えき", romaji: "Station" },
+                            { kana: "こうえん", romaji: "Park" }
                         ],
                         scorable: true
                     }
@@ -1075,6 +1545,77 @@ export const n5Chapters: Chapter[] = [
                         correctAnswer: "えき は どこ ですか",
                         scorable: true,
                         showRomaji: true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: "chapter-4-test",
+        number: 4,
+        title: "Chapter 4 Review",
+        description: "Test your knowledge of Chapter 4",
+        theme: {
+            primaryGradient: "from-slate-700 to-slate-800",
+            secondaryGradient: "from-slate-600 to-slate-700",
+            ringColor: "ring-slate-400",
+            textColors: {
+                title: "text-slate-100",
+                description: "text-slate-300"
+            }
+        },
+        lessons: [
+            {
+                id: "chapter-4-review",
+                title: "Chapter 4 Exam",
+                description: "Final assessment for this chapter",
+                iconType: "question",
+                isQuiz: true,
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Chapter 4 Review",
+                        text: "Let's review directions, positions, and asking for locations."
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "うえ", romaji: "Above" },
+                            { kana: "した", romaji: "Below" },
+                            { kana: "みぎ", romaji: "Right" },
+                            { kana: "ひだり", romaji: "Left" }
+                        ],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say 'On the table'?",
+                        options: ["テーブル の うえ", "テーブル の した", "うえ の テーブル", "テーブル うえ"],
+                        correctAnswer: "テーブル の うえ",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Where is the station?",
+                        correctSentence: ["えき", "は", "どこ", "ですか"],
+                        scorable: true
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "北", romaji: "North" },
+                            { kana: "南", romaji: "South" },
+                            { kana: "東", romaji: "East" },
+                            { kana: "西", romaji: "West" }
+                        ],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you ask 'Where is it?'",
+                        options: ["どこ ですか", "なに ですか", "だれ ですか", "いつ ですか"],
+                        correctAnswer: "どこ ですか",
+                        scorable: true
                     }
                 ]
             }
@@ -1243,11 +1784,347 @@ export const n5Chapters: Chapter[] = [
         ]
     },
     // ========================================
-    // CHAPTER 6: SHOPPING & MONEY
+    // CHAPTER: RESTAURANT ORDERING
+    // ========================================
+    {
+        id: "chapter-restaurant",
+        number: 6,
+        title: "Restaurant Ordering",
+        description: "Ordering at a Japanese restaurant",
+        theme: {
+            primaryGradient: "from-red-400 to-rose-500",
+            secondaryGradient: "from-red-600 to-rose-600",
+            ringColor: "ring-red-200",
+            textColors: {
+                title: "text-red-50",
+                description: "text-red-100/90"
+            }
+        },
+        lessons: [
+            {
+                id: "restaurant-vocab",
+                title: "Restaurant Vocabulary",
+                description: "Essential restaurant words",
+                iconType: 'food',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "At a Restaurant",
+                        text: "Let's learn essential vocabulary for eating at Japanese restaurants!"
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "レストラン", romaji: "resutoran", desc: "Restaurant" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "メニュー", romaji: "menyuu", desc: "Menu" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "ちゅうもん", romaji: "chuumon", desc: "Order" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "おかんじょう", romaji: "okanjou", desc: "Bill / Check" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "てんいん", romaji: "ten'in", desc: "Staff / Server" }
+                        ]
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "メニュー", romaji: "Menu" },
+                            { kana: "ちゅうもん", romaji: "Order" },
+                            { kana: "おかんじょう", romaji: "Bill" },
+                            { kana: "てんいん", romaji: "Server" }
+                        ],
+                        scorable: true
+                    }
+                ]
+            },
+            {
+                id: "ordering-phrases",
+                title: "Ordering Phrases",
+                description: "How to order food",
+                iconType: 'food',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Calling the Server",
+                        text: "To get a server's attention, say すみません (sumimasen - excuse me).",
+                        example: {
+                            jp: "すみません！",
+                            romaji: "sumimasen!",
+                            en: "Excuse me!"
+                        }
+                    },
+                    {
+                        type: 'info',
+                        heading: "Asking for the Menu",
+                        text: "To ask for the menu, use:",
+                        structure: "メニュー を ください",
+                        example: {
+                            jp: "メニュー を ください",
+                            romaji: "menyuu wo kudasai",
+                            en: "Menu, please"
+                        }
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Menu, please",
+                        correctSentence: ["メニュー", "を", "ください"],
+                        scorable: true
+                    },
+                    {
+                        type: 'info',
+                        heading: "Ordering Food",
+                        text: "Point to an item and say これ を ください, or say the item name.",
+                        structure: "[Item] を ください",
+                        example: {
+                            jp: "ラーメン を ください",
+                            romaji: "raamen wo kudasai",
+                            en: "Ramen, please"
+                        }
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Ramen, please",
+                        correctSentence: ["ラーメン", "を", "ください"],
+                        scorable: true
+                    },
+                    {
+                        type: 'text-choice',
+                        speakerName: "店員",
+                        speakerReading: "てんいん",
+                        conversation: [
+                            { speaker: "店員", text: "いらっしゃいませ！", hint: "Welcome!", showHintIcon: true },
+                            { speaker: "店員", text: "ごちゅうもんは？", hint: "Your order?", showHintIcon: true },
+                            { speaker: "You", text: ". . .", isUser: true }
+                        ],
+                        instruction: "You want tempura. What do you say?",
+                        choices: [
+                            { text: "てんぷらをください", isCorrect: true },
+                            { text: "てんぷらがすきです", isCorrect: false },
+                            { text: "てんぷらはおいしい", isCorrect: false }
+                        ],
+                        scorable: true
+                    }
+                ]
+            },
+            {
+                id: "food-drinks-vocab",
+                title: "Food & Drinks",
+                description: "Common menu items",
+                iconType: 'food',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Popular Dishes",
+                        text: "Let's learn some common Japanese dishes!"
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "ラーメン", romaji: "raamen", desc: "Ramen" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "うどん", romaji: "udon", desc: "Udon noodles" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "てんぷら", romaji: "tenpura", desc: "Tempura" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "やきとり", romaji: "yakitori", desc: "Grilled chicken skewers" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "さしみ", romaji: "sashimi", desc: "Raw fish" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "ビール", romaji: "biiru", desc: "Beer" }
+                        ]
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "おさけ", romaji: "osake", desc: "Sake / Alcohol" }
+                        ]
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "ラーメン", romaji: "Ramen" },
+                            { kana: "うどん", romaji: "Udon" },
+                            { kana: "てんぷら", romaji: "Tempura" },
+                            { kana: "ビール", romaji: "Beer" }
+                        ],
+                        scorable: true
+                    }
+                ]
+            },
+            {
+                id: "paying-bill",
+                title: "Paying the Bill",
+                description: "How to pay at a restaurant",
+                iconType: 'shopping',
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Asking for the Bill",
+                        text: "To ask for the check, say:\n\nおかんじょう を おねがいします\n\nOr simply: おかんじょう おねがいします",
+                        example: {
+                            jp: "おかんじょう を おねがいします",
+                            romaji: "okanjou wo onegaishimasu",
+                            en: "Bill, please"
+                        }
+                    },
+                    {
+                        type: 'kana-learn',
+                        characters: [
+                            { kana: "おねがいします", romaji: "onegaishimasu", desc: "Please (polite)" }
+                        ]
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Bill, please",
+                        correctSentence: ["おかんじょう", "を", "おねがいします"],
+                        scorable: true
+                    },
+                    {
+                        type: 'info',
+                        heading: "Saying Thank You",
+                        text: "After eating, it's polite to say:\n\nごちそうさまでした\n\nThis means 'Thank you for the meal'.",
+                        example: {
+                            jp: "ごちそうさまでした",
+                            romaji: "gochisousama deshita",
+                            en: "Thank you for the meal"
+                        }
+                    },
+                    {
+                        type: 'text-choice',
+                        speakerName: "店員",
+                        speakerReading: "てんいん",
+                        conversation: [
+                            { speaker: "You", text: "すみません、おかんじょうをおねがいします", hint: "Excuse me, bill please" },
+                            { speaker: "店員", text: "はい、2000えんになります", hint: "Yes, that will be 2000 yen", showHintIcon: true },
+                            { speaker: "You", text: "(pays)", isUser: false },
+                            { speaker: "店員", text: "ありがとうございます！", hint: "Thank you!", showHintIcon: true },
+                            { speaker: "You", text: ". . .", isUser: true }
+                        ],
+                        instruction: "You've finished eating. What do you say when leaving?",
+                        choices: [
+                            { text: "ごちそうさまでした", isCorrect: true },
+                            { text: "いただきます", isCorrect: false },
+                            { text: "おかんじょうをください", isCorrect: false }
+                        ],
+                        scorable: true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: "chapter-restaurant-test",
+        number: 6,
+        title: "Restaurant Review",
+        description: "Test your restaurant ordering skills",
+        theme: {
+            primaryGradient: "from-slate-700 to-slate-800",
+            secondaryGradient: "from-slate-600 to-slate-700",
+            ringColor: "ring-slate-400",
+            textColors: {
+                title: "text-slate-100",
+                description: "text-slate-300"
+            }
+        },
+        lessons: [
+            {
+                id: "restaurant-review",
+                title: "Restaurant Exam",
+                description: "Final assessment for this chapter",
+                iconType: "question",
+                isQuiz: true,
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Restaurant Review",
+                        text: "Let's review ordering at a restaurant!"
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "メニュー", romaji: "Menu" },
+                            { kana: "ちゅうもん", romaji: "Order" },
+                            { kana: "おかんじょう", romaji: "Bill" },
+                            { kana: "てんいん", romaji: "Server" }
+                        ],
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Ramen, please",
+                        correctSentence: ["ラーメン", "を", "ください"],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "What do you say after finishing a meal?",
+                        options: ["ごちそうさまでした", "いただきます", "おねがいします", "すみません"],
+                        correctAnswer: "ごちそうさまでした",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Bill, please",
+                        correctSentence: ["おかんじょう", "を", "おねがいします"],
+                        scorable: true
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "ラーメン", romaji: "Ramen" },
+                            { kana: "うどん", romaji: "Udon" },
+                            { kana: "てんぷら", romaji: "Tempura" },
+                            { kana: "さしみ", romaji: "Sashimi" }
+                        ],
+                        scorable: true
+                    }
+                ]
+            }
+        ]
+    },
+    // ========================================
+    // CHAPTER 7: SHOPPING & MONEY
     // ========================================
     {
         id: "chapter-6-shopping",
-        number: 6,
+        number: 7,
         title: "Shopping & Money",
         description: "Transactions and prices",
         theme: {
@@ -1331,6 +2208,131 @@ export const n5Chapters: Chapter[] = [
                         correctAnswer: "ふたつ",
                         scorable: true,
                         showRomaji: true
+                    }
+                ]
+            }
+        ]
+    },
+    // ========================================
+    // CHAPTER 5 TEST
+    // ========================================
+    {
+        id: "chapter-5-test",
+        number: 5,
+        title: "Chapter 5 Review",
+        description: "Test your knowledge of Chapter 5",
+        theme: {
+            primaryGradient: "from-slate-700 to-slate-800",
+            secondaryGradient: "from-slate-600 to-slate-700",
+            ringColor: "ring-slate-400",
+            textColors: {
+                title: "text-slate-100",
+                description: "text-slate-300"
+            }
+        },
+        lessons: [
+            {
+                id: "chapter-5-review",
+                title: "Chapter 5 Exam",
+                description: "Final assessment for this chapter",
+                iconType: "question",
+                isQuiz: true,
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Chapter 5 Review",
+                        text: "Let's review city life vocabulary - trains, stations, and convenience stores."
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "でんしゃ", romaji: "Train" },
+                            { kana: "えき", romaji: "Station" },
+                            { kana: "きっぷ", romaji: "Ticket" },
+                            { kana: "ちかてつ", romaji: "Subway" }
+                        ],
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "A ticket to Tokyo, please",
+                        correctSentence: ["とうきょう", "まで", "の", "きっぷ", "を", "ください"],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "What is 'Rice ball' in Japanese?",
+                        options: ["おにぎり", "おべんとう", "コンビニ", "のみもの"],
+                        correctAnswer: "おにぎり",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "This, please",
+                        correctSentence: ["これ", "を", "ください"],
+                        scorable: true
+                    }
+                ]
+            }
+        ]
+    },
+    // ========================================
+    // CHAPTER 6 TEST
+    // ========================================
+    {
+        id: "chapter-6-test",
+        number: 6,
+        title: "Chapter 6 Review",
+        description: "Test your knowledge of Chapter 6",
+        theme: {
+            primaryGradient: "from-slate-700 to-slate-800",
+            secondaryGradient: "from-slate-600 to-slate-700",
+            ringColor: "ring-slate-400",
+            textColors: {
+                title: "text-slate-100",
+                description: "text-slate-300"
+            }
+        },
+        lessons: [
+            {
+                id: "chapter-6-review",
+                title: "Chapter 6 Exam",
+                description: "Final assessment for this chapter",
+                iconType: "question",
+                isQuiz: true,
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Chapter 6 Review",
+                        text: "Let's review shopping, money, and counting things."
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "How much is this?",
+                        correctSentence: ["これ", "は", "いくら", "ですか"],
+                        scorable: true
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "ひとつ", romaji: "One (thing)" },
+                            { kana: "ふたつ", romaji: "Two (things)" },
+                            { kana: "みっつ", romaji: "Three (things)" }
+                        ],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "What does いくら mean?",
+                        options: ["How much?", "Where?", "What?", "When?"],
+                        correctAnswer: "How much?",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Two of these, please",
+                        correctSentence: ["これ", "を", "ふたつ", "ください"],
+                        scorable: true
                     }
                 ]
             }
@@ -1502,6 +2504,79 @@ export const n5Chapters: Chapter[] = [
                             { kana: "しろ", romaji: "shiro", desc: "White" },
                             { kana: "くろ", romaji: "kuro", desc: "Black" }
                         ]
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "あか", romaji: "Red" },
+                            { kana: "あお", romaji: "Blue" },
+                            { kana: "しろ", romaji: "White" },
+                            { kana: "くろ", romaji: "Black" }
+                        ],
+                        scorable: true
+                    }
+                ]
+            }
+        ]
+    },
+    // ========================================
+    // CHAPTER 7 TEST
+    // ========================================
+    {
+        id: "chapter-7-test",
+        number: 7,
+        title: "Chapter 7 Review",
+        description: "Test your knowledge of Chapter 7",
+        theme: {
+            primaryGradient: "from-slate-700 to-slate-800",
+            secondaryGradient: "from-slate-600 to-slate-700",
+            ringColor: "ring-slate-400",
+            textColors: {
+                title: "text-slate-100",
+                description: "text-slate-300"
+            }
+        },
+        lessons: [
+            {
+                id: "chapter-7-review",
+                title: "Chapter 7 Exam",
+                description: "Final assessment for this chapter",
+                iconType: "question",
+                isQuiz: true,
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Chapter 7 Review",
+                        text: "Let's review い-adjectives, な-adjectives, and colors."
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "おおきい", romaji: "Big" },
+                            { kana: "ちいさい", romaji: "Small" },
+                            { kana: "たかい", romaji: "Expensive" },
+                            { kana: "やすい", romaji: "Cheap" }
+                        ],
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "A big house",
+                        correctSentence: ["おおきい", "いえ"],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say 'a quiet room'?",
+                        options: ["しずか な へや", "しずかい へや", "へや しずか", "しずか へや"],
+                        correctAnswer: "しずか な へや",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "A beautiful flower",
+                        correctSentence: ["きれい", "な", "はな"],
+                        scorable: true
                     },
                     {
                         type: 'kana-matching',
@@ -1792,6 +2867,82 @@ export const n5Chapters: Chapter[] = [
         ]
     },
     // ========================================
+    // CHAPTER 8 TEST
+    // ========================================
+    {
+        id: "chapter-8-test",
+        number: 8,
+        title: "Chapter 8 Review",
+        description: "Test your knowledge of Chapter 8",
+        theme: {
+            primaryGradient: "from-slate-700 to-slate-800",
+            secondaryGradient: "from-slate-600 to-slate-700",
+            ringColor: "ring-slate-400",
+            textColors: {
+                title: "text-slate-100",
+                description: "text-slate-300"
+            }
+        },
+        lessons: [
+            {
+                id: "chapter-8-review",
+                title: "Chapter 8 Exam",
+                description: "Final assessment for this chapter",
+                iconType: "question",
+                isQuiz: true,
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Chapter 8 Review",
+                        text: "Let's review verbs, ます form, existence, wants, and likes."
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "たべます", romaji: "Eat" },
+                            { kana: "のみます", romaji: "Drink" },
+                            { kana: "いきます", romaji: "Go" },
+                            { kana: "きます", romaji: "Come" }
+                        ],
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "I read a book",
+                        correctSentence: ["ほん", "を", "よみます"],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "'There is a cat' uses which verb?",
+                        options: ["います", "あります", "です", "ます"],
+                        correctAnswer: "います",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "I want to eat sushi",
+                        correctSentence: ["すし", "を", "たべたい"],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "Which particle goes with すき?",
+                        options: ["が", "を", "は", "に"],
+                        correctAnswer: "が",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "I like music",
+                        correctSentence: ["おんがく", "が", "すき", "です"],
+                        scorable: true
+                    }
+                ]
+            }
+        ]
+    },
+    // ========================================
     // CHAPTER 9: TIME & DATES
     // ========================================
     {
@@ -1925,6 +3076,73 @@ export const n5Chapters: Chapter[] = [
         ]
     },
     // ========================================
+    // CHAPTER 9 TEST
+    // ========================================
+    {
+        id: "chapter-9-test",
+        number: 9,
+        title: "Chapter 9 Review",
+        description: "Test your knowledge of Chapter 9",
+        theme: {
+            primaryGradient: "from-slate-700 to-slate-800",
+            secondaryGradient: "from-slate-600 to-slate-700",
+            ringColor: "ring-slate-400",
+            textColors: {
+                title: "text-slate-100",
+                description: "text-slate-300"
+            }
+        },
+        lessons: [
+            {
+                id: "chapter-9-review",
+                title: "Chapter 9 Exam",
+                description: "Final assessment for this chapter",
+                iconType: "question",
+                isQuiz: true,
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Chapter 9 Review",
+                        text: "Let's review days of the week and time expressions."
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "げつようび", romaji: "Monday" },
+                            { kana: "かようび", romaji: "Tuesday" },
+                            { kana: "すいようび", romaji: "Wednesday" },
+                            { kana: "きんようび", romaji: "Friday" }
+                        ],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "What is 'Friday' in Japanese?",
+                        options: ["きんようび", "げつようび", "どようび", "にちようび"],
+                        correctAnswer: "きんようび",
+                        scorable: true
+                    },
+                    {
+                        type: 'kana-matching',
+                        characters: [
+                            { kana: "あさ", romaji: "Morning" },
+                            { kana: "ひる", romaji: "Noon" },
+                            { kana: "よる", romaji: "Night" },
+                            { kana: "ばん", romaji: "Evening" }
+                        ],
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Are you free on Saturday?",
+                        correctSentence: ["どようび", "ひま", "ですか"],
+                        scorable: true
+                    }
+                ]
+            }
+        ]
+    },
+    // ========================================
     // CHAPTER 10: CONNECTING IDEAS
     // ========================================
     {
@@ -1990,6 +3208,73 @@ export const n5Chapters: Chapter[] = [
                         question: "How do you say 'but' in Japanese?",
                         options: ["が / けど", "から", "と", "も"],
                         correctAnswer: "が / けど",
+                        scorable: true
+                    }
+                ]
+            }
+        ]
+    },
+    // ========================================
+    // CHAPTER 10 TEST
+    // ========================================
+    {
+        id: "chapter-10-test",
+        number: 10,
+        title: "Chapter 10 Review",
+        description: "Test your knowledge of Chapter 10",
+        theme: {
+            primaryGradient: "from-slate-700 to-slate-800",
+            secondaryGradient: "from-slate-600 to-slate-700",
+            ringColor: "ring-slate-400",
+            textColors: {
+                title: "text-slate-100",
+                description: "text-slate-300"
+            }
+        },
+        lessons: [
+            {
+                id: "chapter-10-review",
+                title: "Chapter 10 Exam",
+                description: "Final assessment for this chapter",
+                iconType: "question",
+                isQuiz: true,
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Chapter 10 Review",
+                        text: "Let's review connecting sentences with から, けど, と, and や."
+                    },
+                    {
+                        type: 'mcq',
+                        question: "What does 'から' mean?",
+                        options: ["Because", "But", "And", "Or"],
+                        correctAnswer: "Because",
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "'Expensive but delicious' uses which connector?",
+                        options: ["けど", "と", "や", "から"],
+                        correctAnswer: "けど",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Apples and oranges (complete list)",
+                        correctSentence: ["りんご", "と", "みかん"],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "'Apples, oranges, etc.' (incomplete list) uses?",
+                        options: ["や", "と", "も", "の"],
+                        correctAnswer: "や",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Because it's hot",
+                        correctSentence: ["あつい", "から"],
                         scorable: true
                     }
                 ]
@@ -2098,6 +3383,73 @@ export const n5Chapters: Chapter[] = [
                         correctAnswer: "いきましょう",
                         scorable: true,
                         showRomaji: true
+                    }
+                ]
+            }
+        ]
+    },
+    // ========================================
+    // CHAPTER 11 TEST
+    // ========================================
+    {
+        id: "chapter-11-test",
+        number: 11,
+        title: "Chapter 11 Review",
+        description: "Test your knowledge of Chapter 11",
+        theme: {
+            primaryGradient: "from-slate-700 to-slate-800",
+            secondaryGradient: "from-slate-600 to-slate-700",
+            ringColor: "ring-slate-400",
+            textColors: {
+                title: "text-slate-100",
+                description: "text-slate-300"
+            }
+        },
+        lessons: [
+            {
+                id: "chapter-11-review",
+                title: "Chapter 11 Exam",
+                description: "Final assessment for this chapter",
+                iconType: "question",
+                isQuiz: true,
+                cards: [
+                    {
+                        type: 'info',
+                        heading: "Chapter 11 Review",
+                        text: "Let's review wants, desires, and suggestions."
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say 'I want to go'?",
+                        options: ["いきたい", "いきます", "いって", "いく"],
+                        correctAnswer: "いきたい",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "I want water",
+                        correctSentence: ["みず", "が", "ほしい"],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say 'Let's eat'?",
+                        options: ["たべましょう", "たべたい", "たべます", "たべて"],
+                        correctAnswer: "たべましょう",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "Let's go together",
+                        correctSentence: ["いっしょに", "いきましょう"],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "'I want coffee' uses which particle?",
+                        options: ["が", "を", "は", "に"],
+                        correctAnswer: "が",
+                        scorable: true
                     }
                 ]
             }
@@ -2444,6 +3796,12 @@ export const n5Chapters: Chapter[] = [
                         options: ["は and が", "を and に", "で and へ", "の and と"],
                         correctAnswer: "は and が",
                         scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "I am also a student",
+                        correctSentence: ["わたし", "も", "がくせい", "です"],
+                        scorable: true
                     }
                 ]
             },
@@ -2493,6 +3851,19 @@ export const n5Chapters: Chapter[] = [
                         characters: [
                             { kana: "かばん", romaji: "kaban", desc: "Bag" }
                         ]
+                    },
+                    {
+                        type: 'mcq',
+                        question: "What is 'Dog' in Japanese?",
+                        options: ["いぬ", "ねこ", "ひと", "くるま"],
+                        correctAnswer: "いぬ",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "This is a cat",
+                        correctSentence: ["これ", "は", "ねこ", "です"],
+                        scorable: true
                     },
                     {
                         type: 'kana-matching',
@@ -2826,6 +4197,19 @@ export const n5Chapters: Chapter[] = [
                         ]
                     },
                     {
+                        type: 'mcq',
+                        question: "What is 'Water'?",
+                        options: ["みず", "ごはん", "にく", "さかな"],
+                        correctAnswer: "みず",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "This is meat",
+                        correctSentence: ["これ", "は", "にく", "です"],
+                        scorable: true
+                    },
+                    {
                         type: 'kana-matching',
                         characters: [
                             { kana: "みず", romaji: "Water" },
@@ -3153,6 +4537,19 @@ export const n5Chapters: Chapter[] = [
                         ]
                     },
                     {
+                        type: 'mcq',
+                        question: "What is 'to Buy'?",
+                        options: ["かいます", "きます", "うります", "はたらきます"],
+                        correctAnswer: "かいます",
+                        scorable: true
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "I buy water",
+                        correctSentence: ["みず", "を", "かいます"],
+                        scorable: true
+                    },
+                    {
                         type: 'kana-matching',
                         characters: [
                             { kana: "きます", romaji: "Come" },
@@ -3204,6 +4601,19 @@ export const n5Chapters: Chapter[] = [
                         characters: [
                             { kana: "はれ", romaji: "hare", desc: "Sunny/Clear" }
                         ]
+                    },
+                    {
+                        type: 'sentence-builder',
+                        englishPrompt: "The weather is sunny",
+                        correctSentence: ["てんき", "は", "はれ", "です"],
+                        scorable: true
+                    },
+                    {
+                        type: 'mcq',
+                        question: "How do you say 'Rain'?",
+                        options: ["あめ", "ゆき", "くもり", "はれ"],
+                        correctAnswer: "あめ",
+                        scorable: true
                     },
                     {
                         type: 'kana-matching',

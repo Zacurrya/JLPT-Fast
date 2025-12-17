@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useRomajiTranslation } from "../../../hooks/useRomajiTranslation";
+import { useRomajiTranslation } from "@hooks/useRomajiTranslation";
 
 interface LessonCardProps {
     segment: {
@@ -43,21 +43,6 @@ export default function LessonCard({ segment, currentIndex, total, onNext, isLas
 
     return (
         <div className="max-w-2xl mx-auto w-full flex flex-col min-h-[60vh]">
-            {/* Progress */}
-            <div className="mb-8 no-interact-text">
-                <div className="flex justify-between text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">
-                    <span>Lesson Progress</span>
-                    <span>{currentIndex + 1} / {total}</span>
-                </div>
-                <div className="h-2 bg-secondary/10 rounded-full overflow-hidden">
-                    <motion.div
-                        className="h-full bg-primary"
-                        initial={{ width: 0 }}
-                        animate={{ width: `${progress}%` }}
-                    />
-                </div>
-            </div>
-
             {/* Card */}
             <div className="flex-1 flex flex-col">
                 <AnimatePresence mode="wait">
@@ -67,7 +52,7 @@ export default function LessonCard({ segment, currentIndex, total, onNext, isLas
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: -20 }}
                         transition={{ duration: 0.3 }}
-                        className="flex-1 bg-card border border-border rounded-2xl p-8 md:p-10 shadow-2xl flex flex-col justify-center items-center text-center relative overflow-hidden"
+                        className="flex-1 bg-card border border-border rounded-2xl p-5 md:p-10 shadow-2xl flex flex-col justify-center items-center text-center relative overflow-hidden"
                     >
                         {/* Decorative background element */}
                         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary via-secondary to-primary opacity-50" />

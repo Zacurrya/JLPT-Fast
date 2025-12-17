@@ -120,23 +120,6 @@ export default function SentenceBuilder({
 
     return (
         <div className="max-w-4xl mx-auto w-full flex flex-col min-h-[60vh]">
-            {/* Progress */}
-            {currentIndex !== undefined && total !== undefined && (
-                <div className="mb-8">
-                    <div className="flex justify-between text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">
-                        <span>Lesson Progress</span>
-                        <span>{currentIndex + 1} / {total}</span>
-                    </div>
-                    <div className="h-2 bg-secondary/10 rounded-full overflow-hidden">
-                        <motion.div
-                            className="h-full bg-primary"
-                            initial={{ width: 0 }}
-                            animate={{ width: `${progress}%` }}
-                        />
-                    </div>
-                </div>
-            )}
-
             {/* Card */}
             <div className="flex-1 bg-card border border-border rounded-2xl p-8 md:p-12 shadow-xl flex flex-col">
                 {/* Decorative top bar */}
@@ -163,7 +146,9 @@ export default function SentenceBuilder({
                         ${isChecked
                             ? isCorrect
                                 ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
-                                : 'border-red-500 bg-red-50 dark:bg-red-900/20'
+                                : showedAnswer
+                                    ? 'border-amber-500 bg-amber-50 dark:bg-amber-900/20' // Neutral/Answer revealed
+                                    : 'border-red-500 bg-red-50 dark:bg-red-900/20' // Incorrect
                             : 'border-dashed border-border bg-muted/30'
                         }
                     `}>
@@ -189,9 +174,11 @@ export default function SentenceBuilder({
                                             }
                                             ${isChecked && isCorrect
                                                 ? 'bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300'
-                                                : isChecked && !isCorrect
-                                                    ? 'bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300'
-                                                    : 'bg-primary/10 text-primary border-2 border-primary/30'
+                                                : isChecked && showedAnswer
+                                                    ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-900 dark:text-amber-100' // Neutral blocks
+                                                    : isChecked && !isCorrect
+                                                        ? 'bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300'
+                                                        : 'bg-primary/10 text-primary border-2 border-primary/30'
                                             }
                                         `}
                                     >
@@ -239,13 +226,22 @@ export default function SentenceBuilder({
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0 }}
-                            className={`text-center mb-6 flex items-center justify-center gap-2 ${isCorrect ? 'text-green-600' : 'text-red-600'
+                            className={`text-center mb-6 flex items-center justify-center gap-2 ${isCorrect
+                                ? 'text-green-600'
+                                : showedAnswer
+                                    ? 'text-amber-600' // Neutral text color
+                                    : 'text-red-600'
                                 }`}
                         >
                             {isCorrect ? (
                                 <>
                                     <Check className="w-6 h-6" />
                                     <span className="font-bold text-lg">Perfect! That's correct!</span>
+                                </>
+                            ) : showedAnswer ? (
+                                <>
+                                    <Eye className="w-6 h-6" />
+                                    <span className="font-bold text-lg">Here is the correct answer.</span>
                                 </>
                             ) : (
                                 <>

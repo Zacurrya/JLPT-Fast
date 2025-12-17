@@ -29,8 +29,8 @@ export function ChapterNumberBadge({ number, isLeft, gradient = "bg-gradient-to-
             absolute ${isLeft ? 'md:right-8 left-8' : 'md:left-8 left-8'}
             ${className || '-top-6 w-16 h-16'} 
             ${gradient}
-            rounded-2xl flex flex-col items-center justify-center text-white font-black
-            shadow-xl border-4 border-white transform hover:rotate-6 transition-all duration-300
+            font-serif rounded-2xl flex flex-col items-center justify-center text-white font-black
+            shadow-xl border-2 border-white transform transition-all duration-300
             group/badge cursor-default pointer-events-auto
         `}>
             {/* Number - Shows by default */}
@@ -40,7 +40,7 @@ export function ChapterNumberBadge({ number, isLeft, gradient = "bg-gradient-to-
 
             {/* Kanji - Shows on hover */}
             <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover/badge:opacity-100 transition-opacity duration-300">
-                <span className="text-2xl font-black">{kanjiNumber}</span>
+                <span className="text-2xl font-semibold font-serif">{kanjiNumber}</span>
             </div>
         </div>
     );

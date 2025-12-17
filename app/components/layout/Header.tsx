@@ -6,18 +6,19 @@ export default function Header() {
             <nav className="container gap-10 mx-auto flex h-16 items-center px-6 justify-center md:justify-start">
                 <Link href="/" className="flex items-center space-x-2 group">
                     <span className="h-4 w-4 rounded-full bg-primary/80 group-hover:scale-110 transition-transform"></span>
-                    <span className="text-xl font-serif font-bold tracking-wider text-foreground">
+                    <span className="text-xl font-serif font-semibold tracking-wider text-foreground">
                         JLPT Fast</span>
                 </Link>
-                <Link href="/lessons" className="flex items-center space-x-2 group">
-                    <span className="text-lg font-serif font-bold tracking-wider text-foreground/80 hover:text-foreground">
+                <Link href="/learn" className="flex items-center space-x-2 group">
+                    <span className="text-lg font-serif font-medium tracking-wider text-foreground/80 hover:text-foreground">
                         Learn</span>
                 </Link>
                 <Link href="/practice" className="flex items-center space-x-2 group">
-                    <span className="text-lg font-serif font-bold tracking-wider text-foreground/80 hover:text-foreground">
+                    <span className="text-lg font-serif font-medium tracking-wider text-foreground/80 hover:text-foreground">
                         Practice</span>
                 </Link>
             </nav>
+            <hr className="border-border" />
         </header>
     );
 }
